@@ -9,5 +9,5 @@ package Main;
  * @author Uni
  */
 public class Main {
-    
+    // this is a new line
 }
