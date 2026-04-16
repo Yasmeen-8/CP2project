@@ -5,6 +5,8 @@ import java.util.*;
 public class UserManage {
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
+    static Member personM;
+    static Employee personE;
     
     public static void alterMenu(){
     do{
@@ -20,28 +22,35 @@ public class UserManage {
     checknum();
     }
     
+    public static void getMember(Member member){
+    personM = member;
+    }
+    
+    public static void getEmployee(Employee employee){
+    personE = employee;
+    }
+    
      public static  void checknum(){
-         int id = 0;
+        int id = 0;
         switch(navigation){
             case 1 -> {
                 System.out.println("--- Edit name ---");
                 System.out.println("");
-                System.out.println("enter ID:");
-                id = scan.nextInt();
-                if(Main.EditingMember){
-                Member person = Main.getMemberByID(id);}
-                else{
-                Employee person = Main.getEmpoloyeeByID(id);
-                }
                 System.out.println("enter new name: ");
                 String newname = scan.next();
-                person.setName(newname);
+                if(Main.EditingMember){
+                personM.setName(newname);}
+                else{
+                personE.setName(newname);
+                }
+
             }
             case 2 -> {
             }
             case 3 -> {
             }
             case 4 -> {
+                
             }
             case 5 -> {
                 System.out.println("Returning to main Menu...");

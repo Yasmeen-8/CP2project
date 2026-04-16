@@ -67,7 +67,8 @@ public class Main { //START OF CLASS
                 System.out.println(" --- alter Member ---");
                 System.out.println("");
                 System.out.println("Enter id:");
-                String input = scan.next();
+                int input = scan.nextInt();
+                UserManage.getMember(getMemberByID(input));
                 EditingMember = true;
                 UserManage.alterMenu();
             }
