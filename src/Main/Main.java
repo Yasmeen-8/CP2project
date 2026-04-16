@@ -75,6 +75,9 @@ public class Main { //START OF CLASS
             case 4 -> {
                 System.out.println(" --- alter Employee ---");
                 System.out.println("");
+                System.out.println("Enter id:");
+                int input = scan.nextInt();
+                UserManage.getEmployee(getEmpoloyeeByID(input));
                 EditingMember = false;
                 UserManage.alterMenu();
             }
@@ -83,8 +86,11 @@ public class Main { //START OF CLASS
                 System.out.println("");
             }
             case 6 -> {
+                System.out.println(" --- Assign Member to trainer---");
                 System.out.println("");
-                System.out.println("");
+                System.out.println("Enter trainer ID: ");
+                int input = scan.nextInt();
+                assignMemberToTrainer(getEmpoloyeeByID(input));
             }
             case 7 -> {
                 System.out.println("");
@@ -130,7 +136,12 @@ public class Main { //START OF CLASS
     }
     
     
-    
+    public static void assignMemberToTrainer(Employee employee){
+        System.out.println("Enter the member ID you would like to add: ");
+        int id = scan.nextInt();
+        Member memb = getMemberByID(id);
+        employee.assignMember(memb);
+    }
     
     //returns the member from the list by checking and searching
     public static Member getMemberByID(int memberID){
