@@ -3,10 +3,10 @@ import java.util.*;
 
 
 public class UserManage {
-    public int navigation = 0;
-    Scanner scan = new Scanner(System.in);
+    public static int navigation = 0;
+    static Scanner scan = new Scanner(System.in);
     
-    public void alterMenu(){
+    public static void alterMenu(){
     do{
     System.out.println(" --- Alter User Menu ---");
     System.out.println("1: edit name");
@@ -20,15 +20,19 @@ public class UserManage {
     checknum();
     }
     
-     public  void checknum(){
+     public static  void checknum(){
          int id = 0;
         switch(navigation){
             case 1 -> {
-                System.out.println("-- Edit name ---");
+                System.out.println("--- Edit name ---");
                 System.out.println("");
                 System.out.println("enter ID:");
                 id = scan.nextInt();
-                Member person = Main.getMemberByID(id);
+                if(Main.EditingMember){
+                Member person = Main.getMemberByID(id);}
+                else{
+                Employee person = Main.getEmpoloyeeByID(id);
+                }
                 System.out.println("enter new name: ");
                 String newname = scan.next();
                 person.setName(newname);

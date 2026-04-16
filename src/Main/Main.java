@@ -10,6 +10,7 @@ public class Main { //START OF CLASS
     
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
+    public static boolean EditingMember = false;
     
     
     
@@ -65,11 +66,16 @@ public class Main { //START OF CLASS
             case 3 -> {
                 System.out.println(" --- alter Member ---");
                 System.out.println("");
+                System.out.println("Enter id:");
+                String input = scan.next();
+                EditingMember = true;
                 UserManage.alterMenu();
             }
             case 4 -> {
+                System.out.println(" --- alter Employee ---");
                 System.out.println("");
-                System.out.println("");
+                EditingMember = false;
+                UserManage.alterMenu();
             }
             case 5 -> {
                 System.out.println("");
