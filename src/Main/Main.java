@@ -59,12 +59,13 @@ public class Main { //START OF CLASS
                 System.out.println("Member added"); // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
             }
             case 2 -> {
-                System.out.println("");
+                System.out.println(" --- ");
                 System.out.println("");
             }
             case 3 -> {
+                System.out.println(" --- alter Member ---");
                 System.out.println("");
-                System.out.println("");
+                UserManage.alterMenu();
             }
             case 4 -> {
                 System.out.println("");
