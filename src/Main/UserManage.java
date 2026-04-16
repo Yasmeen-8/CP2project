@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Main;
 import java.util.*;
 
@@ -25,8 +21,17 @@ public class UserManage {
     }
     
      public  void checknum(){
+         int id = 0;
         switch(navigation){
             case 1 -> {
+                System.out.println("-- Edit name ---");
+                System.out.println("");
+                System.out.println("enter ID:");
+                id = scan.nextInt();
+                Member person = Main.getMemberByID(id);
+                System.out.println("enter new name: ");
+                String newname = scan.next();
+                person.setName(newname);
             }
             case 2 -> {
             }
