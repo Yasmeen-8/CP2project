@@ -18,7 +18,7 @@ public class Main { //START OF CLASS
         menu();
     }
     
-    public static void menu(){
+    public static void menu(){ //FIX NUMBERS
     do{
     System.out.println("Please choose an option from the following menu");
     System.out.println("--- add user ---");
@@ -30,16 +30,16 @@ public class Main { //START OF CLASS
     System.out.println("4: alter employee details");
     System.out.println("");
     System.out.println("--- trainer manage ---");
+    System.out.println("5: List assigned members to trainer"); // Change to trainer manage
     System.out.println("6: assign a member to a personal trainer");
-    System.out.println("7: remove a member from a personal trainers list of members");
+    System.out.println("7: remove a member from a personal trainers list of members"); // 
     System.out.println("");
     System.out.println("");
     System.out.println("8: delete gym employees");
     System.out.println("9: delete members");
-    System.out.println("10: List assigned members to trainer");
-    System.out.println("11: download marketing report");
+    System.out.println("10: download marketing report");
     System.out.println("");
-    System.out.println("12: exit system");
+    System.out.println("11: exit system");
     navigation = scan.nextInt();
     }while(navigation <= 0 || navigation >= 12);
     checknum();
@@ -60,8 +60,14 @@ public class Main { //START OF CLASS
                 System.out.println("Member added"); // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
             }
             case 2 -> {
-                System.out.println(" --- ");
+                System.out.println("--- Adding new Employee ---");
                 System.out.println("");
+                System.out.println("Enter name:");
+                String input = scan.next();
+                // we can add verification later
+                Employee person = new Employee();
+                StoreUsers.employees.add(person);
+                System.out.println("Employee added");
             }
             case 3 -> {
                 System.out.println(" --- alter Member ---");
@@ -81,9 +87,22 @@ public class Main { //START OF CLASS
                 EditingMember = false;
                 UserManage.alterMenu();
             }
-            case 5 -> {
+            case 5 -> {// LIST TRAINER ASSIGNED MEMBERS
+                int id = 0;
+                System.out.println(" --- Listing trainers assigned members --- ");
                 System.out.println("");
-                System.out.println("");
+                System.out.println("enter ID:");
+                id = scan.nextInt();
+                Employee emp = getEmpoloyeeByID(id);
+                if(emp.assignedMembers != null){
+                for(int i = 0; i < emp.assignedMembers.size(); i++){
+                    Member person = emp.assignedMembers.get(i);
+                    System.out.println("member no: " + Integer.toString(i));
+                    System.out.println("Member ID = " + Integer.toString(person.getMemberID()) + "Member name: " + person.getName());
+                }
+                }else{
+                System.out.println("Employee is not a trainer, or does not have any members assigned");
+                menu();}
             }
             case 6 -> {
                 System.out.println(" --- Assign Member to trainer---");
@@ -104,29 +123,11 @@ public class Main { //START OF CLASS
                 System.out.println("");
                 System.out.println("");
             }
-            case 10 -> {// LIST TRAINER ASSIGNED MEMBERS
-                int id = 0;
-                System.out.println(" --- Listing trainers assigned members --- ");
+            case 10 -> {
                 System.out.println("");
-                System.out.println("enter ID:");
-                id = scan.nextInt();
-                Employee emp = getEmpoloyeeByID(id);
-                if(emp.assignedMembers != null){
-                for(int i = 0; i < emp.assignedMembers.size(); i++){
-                    Member person = emp.assignedMembers.get(i);
-                    System.out.println("member no: " + Integer.toString(i));
-                    System.out.println("Member ID = " + Integer.toString(person.getMemberID()) + "Member name: " + person.getName());
-                }
-                }else{
-                System.out.println("Employee is not a trainer, or does not have any members assigned");
-                menu();
-                }
+                System.out.println("");
             }
             case 11 -> {
-                System.out.println("");
-                System.out.println("");
-            }
-            case 12 ->{
             System.out.println("Thank you for using our system.");
             System.exit(0);
             }
