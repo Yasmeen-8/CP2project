@@ -4,8 +4,10 @@
  */
 package Main;
 
-
-public class Main {
+/**
+ *
+ * @author Uni
+ */
+public class Employee {
     
-          
 }

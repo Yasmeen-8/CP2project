@@ -5,7 +5,13 @@
 package Main;
 
 
-public class Main {
+public class Member {
+    String name;
+    String age;
+    int phoneNumber;
     
-          
+    public Member(){
+        
+        }
+    
 }

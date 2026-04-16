@@ -5,7 +5,10 @@
 package Main;
 
 
-public class Main {
+public class UserManage {
     
-          
+    public void addMember(Member newMember){
+        
+    }
+    
 }
