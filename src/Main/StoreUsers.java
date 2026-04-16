@@ -8,23 +8,31 @@ import java.util.*;
 
 public class StoreUsers {
     
-    ArrayList<Member> members = new ArrayList<Member>();
-    ArrayList<Employee> employees = new ArrayList<Employee>(); 
+    static ArrayList<Member> members = new ArrayList<Member>();
+    static ArrayList<Employee> employees = new ArrayList<Employee>();
 
     public ArrayList<Member> getMembers() {
         return members;
     }
 
-    public void setMembers(ArrayList<Member> members) {
-        this.members = members;
-    }
-
     public ArrayList<Employee> getEmployees() {
         return employees;
     }
-
-    public void setEmployees(ArrayList<Employee> employees) {
-        this.employees = employees;
+    
+    public void addEmployee(Employee employee){
+    employees.add(employee);
+    }
+    
+    public void addMember(Member member){
+    members.add(member);
+    }
+    
+    public void removeMember(Member member){
+    members.remove(member);
+    }
+    
+    public void removeEmployee(Employee employee){
+    employees.remove(employee);
     }
     
     

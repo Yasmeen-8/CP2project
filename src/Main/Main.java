@@ -7,9 +7,9 @@ import java.util.*;
 
 
     
-public class Main {
+public class Main { //START OF CLASS
     
-    public int navigation = 0;
+    public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
     
     
@@ -18,7 +18,7 @@ public class Main {
         menu();
     }
     
-    public void menu(){
+    public static void menu(){
     do{
     System.out.println("Please choose an option from the following menu");
     System.out.println("--- add user ---");
@@ -38,17 +38,147 @@ public class Main {
     System.out.println("9: delete members");
     System.out.println("10: List assigned members to trainer");
     System.out.println("11: download marketing report");
+    System.out.println("");
+    System.out.println("12: exit system");
     navigation = scan.nextInt();
     }while(navigation <= 0 || navigation >= 12);
-    
-    }
-}
+    checknum();
 
-    public void checknum(){
+    }
+
+
+    public static void checknum(){
         switch(navigation){
-            case 1:
+            case 1 -> {
+                System.out.println("--- Adding new Member ---");
+                System.out.println("");
+                System.out.println("Enter name:");
+                String input = scan.next();
+                // we can add verification later
+                Member person = new Member(input);
+                StoreUsers.members.add(person);
+                System.out.println("Member added"); // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
+            }
+            case 2 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 3 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 4 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 5 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 6 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 7 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 8 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 9 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 10 -> {// LIST TRAINER ASSIGNED MEMBERS
+                int id = 0;
+                System.out.println(" --- Listing trainers assigned members --- ");
+                System.out.println("");
+                System.out.println("enter ID:");
+                id = scan.nextInt();
+                Employee emp = getEmpoloyeeByID(id);
+                if(emp.assignedMembers != null){
+                for(int i = 0; i < emp.assignedMembers.size(); i++){
+                    Member person = emp.assignedMembers.get(i);
+                    System.out.println("member no: " + Integer.toString(i));
+                    System.out.println("Member ID = " + Integer.toString(person.getMemberID()) + "Member name: " + person.getName());
+                }
+                }else{
+                System.out.println("Employee is not a trainer, or does not have any members assigned");
+                menu();
+                }
+            }
+            case 11 -> {
+                System.out.println("");
+                System.out.println("");
+            }
+            case 12 ->{
+            System.out.println("Thank you for using our system.");
+            System.exit(0);
+            }
+            default -> menu();
                 
-                break;
-        
         }
     }
+    
+    
+    
+    
+    //returns the member from the list by checking and searching
+    public static Member getMemberByID(int memberID){
+    Member person = null;
+    if(checkMember(memberID)){
+    person = StoreUsers.members.get(memberID);
+    }else{
+    person = null;
+    System.out.println("Id does not exist");
+    menu(); // can make it so it returns/loops until exist (like in the alter member number 5)
+    }
+    return person;}
+    
+    //returns the member from the list by checking and searching
+    public static Employee getEmpoloyeeByID(int employeeID){
+    Employee person = null;
+    if(checkMember(employeeID)){
+    person = StoreUsers.employees.get(employeeID);
+    }else{
+    person = null;
+    System.out.println("Id does not exist");
+    menu(); // can make it so it returns/loops until exist (like in the alter member number 5)
+    }
+    return person;
+    }
+    
+    
+    
+    
+    //returns true if member is in the members list
+    public static boolean checkMember(int memberID){ 
+        boolean memberExists;
+        Member member = StoreUsers.members.get(memberID);
+        if(member != null){
+        memberExists = true;
+        }else{
+            memberExists = false;
+        }
+        return memberExists;
+    
+    }
+    
+    //returns true if employee is in the employee list
+    public static boolean checkEmployee(int employeeID){ //returns true if employee is in the employee list
+        boolean employeeExists;
+        Employee emp = StoreUsers.employees.get(employeeID);
+        
+        if(emp != null){
+        employeeExists = true;
+        }else{
+            employeeExists = false;
+        }
+        return employeeExists;
+    
+    }
+    
+    
+    } // END OF CLASS
