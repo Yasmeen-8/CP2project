@@ -32,6 +32,9 @@ public class UserManage {
     
      public static  void checknum(){
         int id = 0;
+        int phone = 0;
+        String email = " ";
+        boolean Activity;
         switch(navigation){
             case 1 -> {
                 System.out.println("--- Edit name ---");
@@ -46,11 +49,38 @@ public class UserManage {
 
             }
             case 2 -> {
+                System.out.println("--- Edit phone ---");
+                System.out.println("");
+                System.out.println("enter new phone number: ");
+                int newPhone = scan.nextInt();
+                if(Main.EditingMember){
+                personM.setPhoneNumber(newPhone);}
+                else{
+                personE.setPhoneNumber(newPhone);
+                }
             }
             case 3 -> {
+                System.out.println("--- Edit email ---");
+                System.out.println("");
+                System.out.println("enter new email: ");
+                String newEmail = scan.next();
+                if(Main.EditingMember){
+                personM.setEmail(newEmail);}
+                else{
+                personE.setEmail(newEmail);
+                }
             }
             case 4 -> {
-                
+                System.out.println("--- Edit Activity ---");
+                System.out.println("");
+                System.out.println("enter new Activity: ");
+                Activity = scan.nextBoolean();
+                if(Main.EditingMember){
+                personM.setActive(Activity);}
+                else{
+                    System.out.println(" This person is an employee ");
+                    Main.menu();
+                }
             }
             case 5 -> {
                 System.out.println("Returning to main Menu...");
