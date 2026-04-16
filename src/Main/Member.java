@@ -5,6 +5,15 @@ public class Member {
     int memberID;
     private String name;
     private String age;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
     private int phoneNumber;
     private boolean Active;
     private Employee AssignedTrainer;
