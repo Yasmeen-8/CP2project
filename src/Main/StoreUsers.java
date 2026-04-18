@@ -6,6 +6,7 @@ public class StoreUsers {
     
     static ArrayList<Member> members = new ArrayList<Member>();
     static ArrayList<Employee> employees = new ArrayList<Employee>();
+    static ArrayList<Users> users = new ArrayList<Users>();
 
     public ArrayList<Member> getMembers() {
         return members;
@@ -17,10 +18,12 @@ public class StoreUsers {
     
     public void addEmployee(Employee employee){
     employees.add(employee);
+    users.add(employee);
     }
     
     public void addMember(Member member){
     members.add(member);
+    users.add(member);
     }
     
     public void removeMember(Member member){

@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Main;
 import java.util.*;
-/**
- *
- * @author Uni
- */
-public class Employee {
+
+public class Employee extends Users{
     
     ArrayList<Member> assignedMembers = new ArrayList<Member>();
     int empID;

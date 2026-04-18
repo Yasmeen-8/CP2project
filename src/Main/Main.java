@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Main;
 import java.util.*;
 
     
-public class Main { //START OF CLASS
+public class Main{ //START OF CLASS
     
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);

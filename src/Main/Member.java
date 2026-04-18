@@ -1,7 +1,7 @@
 package Main;
 
 
-public class Member {
+public class Member extends Users{
     int memberID;
     private String name;
     private String age;
