@@ -62,8 +62,8 @@ public class Main{ //START OF CLASS
                 System.out.println("Enter name:");
                 String input = scan.next();
                 // we can add verification later
-                Employee person = new Employee();
-                StoreUsers.employees.add(person);
+                Users person = new Employee();
+                StoreUsers.users.add(person);
                 System.out.println("Employee added");
             }
             case 3 -> {

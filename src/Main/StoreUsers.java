@@ -8,30 +8,15 @@ public class StoreUsers {
     static ArrayList<Employee> employees = new ArrayList<Employee>();
     static ArrayList<Users> users = new ArrayList<Users>();
 
-    public ArrayList<Member> getMembers() {
-        return members;
-    }
-
-    public ArrayList<Employee> getEmployees() {
-        return employees;
+    public ArrayList<Users> getUsersList() {
+        return users;
     }
     
-    public void addEmployee(Employee employee){
-    employees.add(employee);
-    users.add(employee);
+        public void addUser(Users person){
+    users.add(person);
     }
-    
-    public void addMember(Member member){
-    members.add(member);
-    users.add(member);
-    }
-    
-    public void removeMember(Member member){
-    members.remove(member);
-    }
-    
-    public void removeEmployee(Employee employee){
-    employees.remove(employee);
+    public void removeUser(Users person){
+    users.remove(person);
     }
     
     

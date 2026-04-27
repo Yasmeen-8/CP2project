@@ -3,47 +3,11 @@ package Main;
 
 public class Member extends Users{
     int memberID;
-    private String name;
-    private String age;
-    private String email;
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    private int phoneNumber;
     private boolean Active;
     private Employee AssignedTrainer;
 
     public int getMemberID() {
         return memberID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public int getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(int phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public boolean isActive() {
@@ -64,7 +28,7 @@ public class Member extends Users{
 
     
     public Member(String Name){
-        name = Name;
+        this.setName(Name);
         memberID++;
         }
     
