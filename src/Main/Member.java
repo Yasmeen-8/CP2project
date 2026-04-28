@@ -2,12 +2,11 @@ package Main;
 
 
 public class Member extends Users{
-    int memberID;
     private boolean Active;
     private Employee AssignedTrainer;
 
     public int getMemberID() {
-        return memberID;
+        return this.userID;
     }
 
     public boolean isActive() {
@@ -25,11 +24,5 @@ public class Member extends Users{
     public void setAssignedTrainer(Employee AssignedTrainer) {
         this.AssignedTrainer = AssignedTrainer;
     }
-
-    
-    public Member(String Name){
-        this.setName(Name);
-        memberID++;
-        }
     
 }

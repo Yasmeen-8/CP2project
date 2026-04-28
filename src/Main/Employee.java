@@ -1,11 +1,9 @@
-
 package Main;
 import java.util.*;
 
 public class Employee extends Users{
     
     ArrayList<Member> assignedMembers = new ArrayList<Member>();
-    int empID;
     private String department;
 
     public ArrayList<Member> getAssignedMembers() {
@@ -13,7 +11,7 @@ public class Employee extends Users{
     }
 
     public int getEmpID() {
-        return empID;
+        return this.userID;
     }
 
     public String getDepartment() {
@@ -22,11 +20,6 @@ public class Employee extends Users{
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-  
-    
-    public Employee(){
-    empID++;
     }
     
     public void assignMember(Member member){

@@ -1,4 +1,3 @@
-
 package Main;
 import java.util.*;
 
@@ -19,8 +18,7 @@ public class Main{ //START OF CLASS
     do{
     System.out.println("Please choose an option from the following menu");
     System.out.println("--- add user ---");
-    System.out.println("1: add a new member");
-    System.out.println("2: add a new employee");
+    System.out.println("1: Add user");
     System.out.println("");
     System.out.println("--- edit user ---");
     System.out.println("3: alter member details");
@@ -32,8 +30,7 @@ public class Main{ //START OF CLASS
     System.out.println("7: remove a member from a personal trainers list of members"); // 
     System.out.println("");
     System.out.println("");
-    System.out.println("8: delete gym employees");
-    System.out.println("9: delete members");
+    System.out.println("8: Delete User");
     System.out.println("10: download marketing report");
     System.out.println("");
     System.out.println("11: exit system");
@@ -42,40 +39,27 @@ public class Main{ //START OF CLASS
     checknum();
 
     }
-
-
+    
+    
+ 
     public static void checknum(){
         switch(navigation){
             case 1 -> {
-                System.out.println("--- Adding new Member ---");
+                System.out.println("--- Adding new User ---");
                 System.out.println("");
-                System.out.println("Enter name:");
-                String input = scan.next();
-                // we can add verification later
-                Member person = new Member(input);
-                StoreUsers.users.add(person);
-                System.out.println("Member added"); // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
+                AddMember();
+
             }
             case 2 -> {
                 System.out.println("--- Adding new Employee ---");
                 System.out.println("");
-                System.out.println("Enter name:");
-                String input = scan.next();
-                // we can add verification later
-<<<<<<< Updated upstream
-                Users person = new Employee();
-=======
-                Employee person = new Employee();
->>>>>>> Stashed changes
-                StoreUsers.users.add(person);
-                System.out.println("Employee added");
             }
             case 3 -> {
                 System.out.println(" --- alter Member ---");
                 System.out.println("");
                 System.out.println("Enter id:");
                 int input = scan.nextInt();
-                UserManage.getMember(getMemberByID(input));
+                UserManage.getUser(input);
                 EditingMember = true;
                 UserManage.alterMenu();
             }
@@ -84,7 +68,7 @@ public class Main{ //START OF CLASS
                 System.out.println("");
                 System.out.println("Enter id:");
                 int input = scan.nextInt();
-                UserManage.getEmployee(getEmpoloyeeByID(input));
+                UserManage.getUser(input);
                 EditingMember = false;
                 UserManage.alterMenu();
             }
@@ -137,11 +121,10 @@ public class Main{ //START OF CLASS
         }
     }
     
-    
     public static void assignMemberToTrainer(Employee employee){
         System.out.println("Enter the member ID you would like to add: ");
         int id = scan.nextInt();
-        Users memb = getMemberByID(id);
+        Member memb = getMemberByID(id);
         employee.assignMember(memb);
     }
     
@@ -170,9 +153,6 @@ public class Main{ //START OF CLASS
     return person;
     }
     
-    
-    
-    
     //returns true if member is in the members list
     public static boolean checkMember(int memberID){ 
         Users member = StoreUsers.users.get(memberID);
@@ -184,4 +164,69 @@ public class Main{ //START OF CLASS
     public static boolean checkEmployee(int employeeID){ //returns true if employee is in the employee list
         Users emp = StoreUsers.users.get(employeeID);
         return emp instanceof Employee;
-    }    } // END OF CLASS
+    }     
+    
+    public static void getUser(int userID){
+        Users users = StoreUsers.users.get(userID);
+        Boolean userExist;
+        userExist = users instanceof Users;
+    }
+    
+    public static void AddMember(){
+                int input;
+                System.out.println("Enter the following number for each category"); // add a toggle clicking between all of this
+                System.out.println("1. Member: polytechnic Student");
+                System.out.println("2. Member: polytechnic Staff");
+                System.out.println("3. Employee: Other");
+                System.out.println("4. Employee: Trainer");
+                input = scan.nextInt();
+                
+                switch(input){
+                    case 1 -> {
+                        
+                    PolyStudent person = new PolyStudent();
+                    System.out.println("enter name");
+                    person.setName(scan.next());
+                    StoreUsers.users.add(person);
+                    System.out.println("Student added");
+                    
+                    }
+                    case 2 -> {
+                    
+                    PolyStaff person = new PolyStaff();
+                    System.out.println("enter name");
+                    person.setName(scan.next());
+                    StoreUsers.users.add(person);
+                    System.out.println("Staff added");
+                    
+                    }
+                    case 3 -> {
+                    
+                    OtherEmp person = new OtherEmp();
+                    System.out.println("enter name");
+                    person.setName(scan.next());
+                    StoreUsers.users.add(person);
+                    System.out.println("Other employee added");
+                    
+                    }
+                    case 4 -> {
+                    
+                    Trainer person = new Trainer();
+                    System.out.println("enter name");
+                    person.setName(scan.next());
+                    StoreUsers.users.add(person);
+                    System.out.println("Trainer added");
+                    
+                    }
+                    
+                }
+                
+                
+                 // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
+    }
+    
+    public static void removeUser(){
+    
+    }
+
+}// END OF CLASS

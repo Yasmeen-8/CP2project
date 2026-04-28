@@ -5,8 +5,7 @@ import java.util.*;
 public class UserManage {
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
-    static Member personM;
-    static Employee personE;
+    static Users person;
     
     public static void alterMenu(){
     do{
@@ -22,14 +21,6 @@ public class UserManage {
     checknum();
     }
     
-    public static void getMember(Member member){
-    personM = member;
-    }
-    
-    public static void getEmployee(Employee employee){
-    personE = employee;
-    }
-    
      public static  void checknum(){
         int id = 0;
         int phone = 0;
@@ -41,11 +32,7 @@ public class UserManage {
                 System.out.println("");
                 System.out.println("enter new name: ");
                 String newname = scan.next();
-                if(Main.EditingMember){
-                personM.setName(newname);}
-                else{
-                personE.setName(newname);
-                }
+                person.setName(newname);
 
             }
             case 2 -> {
@@ -53,22 +40,14 @@ public class UserManage {
                 System.out.println("");
                 System.out.println("enter new phone number: ");
                 int newPhone = scan.nextInt();
-                if(Main.EditingMember){
-                personM.setPhoneNumber(newPhone);}
-                else{
-                personE.setPhoneNumber(newPhone);
-                }
+                person.setPhoneNumber(newPhone);
             }
             case 3 -> {
                 System.out.println("--- Edit email ---");
                 System.out.println("");
                 System.out.println("enter new email: ");
                 String newEmail = scan.next();
-                if(Main.EditingMember){
-                personM.setEmail(newEmail);}
-                else{
-                personE.setEmail(newEmail);
-                }
+                person.setEmail(newEmail);
             }
             case 4 -> {
                 System.out.println("--- Edit Activity ---");
@@ -76,6 +55,7 @@ public class UserManage {
                 System.out.println("enter new Activity: ");
                 Activity = scan.nextBoolean();
                 if(Main.EditingMember){
+                Member personM = (Member) person;
                 personM.setActive(Activity);}
                 else{
                     System.out.println(" This person is an employee ");
