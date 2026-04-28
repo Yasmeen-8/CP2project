@@ -71,6 +71,10 @@ public class UserManage {
             default -> alterMenu(); 
         }
     }
+
+    static void getUser(int input) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
      
     
 }
