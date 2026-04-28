@@ -53,7 +53,7 @@ public class Main{ //START OF CLASS
                 String input = scan.next();
                 // we can add verification later
                 Member person = new Member(input);
-                StoreUsers.members.add(person);
+                StoreUsers.users.add(person);
                 System.out.println("Member added"); // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
             }
             case 2 -> {
@@ -62,7 +62,11 @@ public class Main{ //START OF CLASS
                 System.out.println("Enter name:");
                 String input = scan.next();
                 // we can add verification later
+<<<<<<< Updated upstream
                 Users person = new Employee();
+=======
+                Employee person = new Employee();
+>>>>>>> Stashed changes
                 StoreUsers.users.add(person);
                 System.out.println("Employee added");
             }
@@ -137,7 +141,7 @@ public class Main{ //START OF CLASS
     public static void assignMemberToTrainer(Employee employee){
         System.out.println("Enter the member ID you would like to add: ");
         int id = scan.nextInt();
-        Member memb = getMemberByID(id);
+        Users memb = getMemberByID(id);
         employee.assignMember(memb);
     }
     
@@ -145,7 +149,7 @@ public class Main{ //START OF CLASS
     public static Member getMemberByID(int memberID){
     Member person = null;
     if(checkMember(memberID)){
-    person = StoreUsers.members.get(memberID);
+    person = (Member) StoreUsers.users.get(memberID);
     }else{
     person = null;
     System.out.println("Id does not exist");
@@ -157,7 +161,7 @@ public class Main{ //START OF CLASS
     public static Employee getEmpoloyeeByID(int employeeID){
     Employee person = null;
     if(checkMember(employeeID)){
-    person = StoreUsers.employees.get(employeeID);
+    person = (Employee) StoreUsers.users.get(employeeID);
     }else{
     person = null;
     System.out.println("Id does not exist");
@@ -171,30 +175,13 @@ public class Main{ //START OF CLASS
     
     //returns true if member is in the members list
     public static boolean checkMember(int memberID){ 
-        boolean memberExists;
-        Member member = StoreUsers.members.get(memberID);
-        if(member != null){
-        memberExists = true;
-        }else{
-            memberExists = false;
-        }
-        return memberExists;
+        Users member = StoreUsers.users.get(memberID);
+        return member instanceof Member;
     
     }
     
     //returns true if employee is in the employee list
     public static boolean checkEmployee(int employeeID){ //returns true if employee is in the employee list
-        boolean employeeExists;
-        Employee emp = StoreUsers.employees.get(employeeID);
-        
-        if(emp != null){
-        employeeExists = true;
-        }else{
-            employeeExists = false;
-        }
-        return employeeExists;
-    
-    }
-    
-    
-    } // END OF CLASS
+        Users emp = StoreUsers.users.get(employeeID);
+        return emp instanceof Employee;
+    }    } // END OF CLASS

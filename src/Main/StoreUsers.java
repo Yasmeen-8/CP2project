@@ -6,6 +6,7 @@ public class StoreUsers {
     
     static ArrayList<Users> users = new ArrayList<Users>();
 
+<<<<<<< Updated upstream
     public ArrayList<Users> getUsersList() {
         return users;
     }
@@ -16,6 +17,18 @@ public class StoreUsers {
     public void removeUser(Users person){
     users.remove(person);
 
+=======
+    public ArrayList<Users> getUsers() {
+        return users;
+    }
+
+    public void addEmployee(Users user){
+        users.add(user);
+    }
+    
+    public void removeEmployee(Users user){
+        users.add(user);
+>>>>>>> Stashed changes
     }
     
     
