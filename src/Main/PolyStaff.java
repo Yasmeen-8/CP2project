@@ -2,8 +2,8 @@ package Main;
 
 public class PolyStaff extends Member{
     double staffDiscount;
-    position position;
-    position department;
+    String position;
+    String department;
     
     PolyStaff(){
         this.userID++;

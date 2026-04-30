@@ -6,16 +6,9 @@ public class StoreUsers {
     
     static ArrayList<Users> users = new ArrayList<>();
 
+  
     public ArrayList<Users> getUsers() {
         return users;
-    }
-
-    public void addEmployee(Users user){
-        users.add(user);
-    }
-    
-    public void removeEmployee(Users user){
-        users.add(user);
     }
     
     
