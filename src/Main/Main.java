@@ -35,7 +35,7 @@ public class Main{ //START OF CLASS
     System.out.println("");
     System.out.println("9: exit system");
     navigation = scan.nextInt();
-    }while(navigation <= 0 || navigation >= 12);
+    }while(navigation <= 0 || navigation >= 10);
     checknum();
 
     }
