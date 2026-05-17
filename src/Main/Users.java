@@ -6,6 +6,15 @@ public class Users {
     private int phoneNumber;
     private String age;
     public int userID;
+    private char gender;
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
 
     public String getName() {
         return name;

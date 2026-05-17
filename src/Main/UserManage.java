@@ -5,7 +5,7 @@ import java.util.*;
 public class UserManage {
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
-    static Users person;
+    private static Users person;
     
     public static void alterMenu(){
     do{

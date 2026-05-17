@@ -4,6 +4,7 @@ package Main;
 public class Member extends Users{
     private boolean Active;
     private Employee AssignedTrainer;
+    private String dateOfBirth;
 
     public int getMemberID() {
         return this.userID;

@@ -3,7 +3,7 @@ package Main;
 import java.util.ArrayList;
 
 public class Trainer extends Employee{
-    ArrayList<Member> assignedMembers = new ArrayList<Member>();
+    private ArrayList<Member> assignedMembers = new ArrayList<Member>();
     
     Trainer(){
     this.userID++;

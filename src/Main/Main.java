@@ -6,8 +6,7 @@ public class Main{ //START OF CLASS
     
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
-    public static boolean EditingMember = false;
-    
+    static boolean EditingMember = false;
     
     
     public static void main(String[] args){
@@ -74,9 +73,9 @@ public class Main{ //START OF CLASS
                 id = scan.nextInt();
                 Trainer emp;
                 emp = getTrainerByID(id);
-                if(emp.assignedMembers != null){
-                for(int i = 0; i < emp.assignedMembers.size(); i++){
-                    Member person = emp.assignedMembers.get(i);
+                if(emp.getAssignedMembers() != null){
+                for(int i = 0; i < emp.getAssignedMembers().size(); i++){
+                    Member person = emp.getAssignedMembers().get(i);
                     System.out.println("member no: " + Integer.toString(i));
                     System.out.println("Member ID = " + Integer.toString(person.getMemberID()) + "Member name: " + person.getName());
                 }
