@@ -1,7 +1,8 @@
 package Main;
+import java.io.Serializable;
 import java.util.*;
 
-public class Employee extends Users{
+public class Employee extends Users implements Serializable{
     
     
     private String department;

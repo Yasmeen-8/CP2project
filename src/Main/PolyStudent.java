@@ -1,6 +1,8 @@
 package Main;
 
-public class PolyStudent extends Member{
+import java.io.Serializable;
+
+public class PolyStudent extends Member implements Serializable{
     double studentDiscount;
     String course;
     boolean Inteam;

@@ -1,8 +1,11 @@
 package Main;
 
-public class Users {
+import java.io.Serializable;
+
+public class Users implements Serializable{
     private String name;
     private String email;
+    private String address;
     private int phoneNumber;
     private String age;
     public int userID;
@@ -30,6 +33,14 @@ public class Users {
     public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    
+    public String getAddress() {
+    return address;
+}
+
+    public void setAddress(String address) {
+    this.address = address;
+}
 
     public String getAge() {
         return age;

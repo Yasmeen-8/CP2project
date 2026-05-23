@@ -1,6 +1,8 @@
 package Main;
 
-public class OtherEmp extends Employee{
+import java.io.Serializable;
+
+public class OtherEmp extends Employee implements Serializable{
     OtherEmp(){
     this.userID++;
     }

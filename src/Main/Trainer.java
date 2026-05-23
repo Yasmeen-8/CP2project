@@ -1,8 +1,9 @@
 package Main;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Trainer extends Employee{
+public class Trainer extends Employee implements Serializable{
     ArrayList<Member> assignedMembers = new ArrayList<Member>();
     
     Trainer(){

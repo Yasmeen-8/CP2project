@@ -1,6 +1,8 @@
 package Main;
 
-public class PolyStaff extends Member{
+import java.io.Serializable;
+
+public class PolyStaff extends Member implements Serializable{
     double staffDiscount;
     String position;
     String department;

@@ -1,8 +1,9 @@
 package Main;
+import java.io.Serializable;
 import java.util.*;
 
 
-public class UserManage {
+public class UserManage implements Serializable{
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
     static Users person;

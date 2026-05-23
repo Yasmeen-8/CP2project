@@ -1,5 +1,8 @@
 package Main;
+import GUI.MarketingReport;
+import java.io.File;
 import java.util.*;
+
 
     
 public class Main{ //START OF CLASS
@@ -11,6 +14,13 @@ public class Main{ //START OF CLASS
     
     
     public static void main(String[] args){
+        File f = new File("gymData.dat");
+
+    if (f.exists()) {
+        StoreUsers.load();
+    } else {
+        StoreUsers.loadStartupFile();
+    }
         menu();
     }
     
@@ -107,8 +117,10 @@ public class Main{ //START OF CLASS
                 removeUser(id);
             }
             case 8 -> {
+                System.out.println("--- downloading marketing report ---");
                 System.out.println("");
-                System.out.println("");
+                MarketingReport ui = new MarketingReport();
+                ui.setVisible(true);
             }
             case 9 -> {
                 System.out.println("Thank you for using our system.");
@@ -263,5 +275,65 @@ public class Main{ //START OF CLASS
         Users person = getUser(userID);
         StoreUsers.users.remove(person);
     }
+    
+public static String generateMarketingReport(String type) {
 
+    String text = "";
+
+    // ================= STAFF =================
+
+    if(type.equals("all") || type.equals("staff")) {
+
+        text += "===== POLYTECHNIC STAFF =====\n\n";
+
+        int count = 0;
+
+        for(Users u : StoreUsers.users) {
+
+            if(u instanceof PolyStaff s) {
+                
+                text += "Name: " + s.getName() + "\n";
+                text += "Address: " + s.getAddress() + "\n";
+                text += "Phone: " + s.getPhoneNumber() + "\n";
+                text += "Position: " + s.position + "\n";
+                text += "Department: " + s.department + "\n";
+
+                text += "----------------------------------\n";
+
+                count++;
+            }
+        }
+
+        text += "\nTotal Staff Members: " + count + "\n\n";
+    }
+
+    // ================= STUDENTS =================
+
+    if(type.equals("all") || type.equals("students")) {
+
+        text += "===== POLYTECHNIC STUDENTS =====\n\n";
+
+        int count = 0;
+
+        for(Users u : StoreUsers.users) {
+
+            if(u instanceof PolyStudent s) {
+
+                text += "Name: " + s.getName() + "\n";
+                text += "Address: " + s.getAddress() + "\n";
+                text += "Phone: " + s.getPhoneNumber() + "\n";
+                text += "Course: " + s.course + "\n";
+                text += "Team: " + s.Teams + "\n";
+
+                text += "----------------------------------\n";
+
+                count++;
+            }
+        }
+
+        text += "\nTotal Student Members: " + count + "\n";
+    }
+
+    return text;
+}
 }// END OF CLASS
