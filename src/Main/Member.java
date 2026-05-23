@@ -6,6 +6,7 @@ import java.io.Serializable;
 public class Member extends Users implements Serializable{
     private boolean Active;
     private Employee AssignedTrainer;
+    private String dateOfBirth;
 
     public int getMemberID() {
         return this.userID;
