@@ -47,6 +47,7 @@ public class HomePage extends javax.swing.JFrame {
 
         btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAdd.setText("ADD");
+        btnAdd.addActionListener(this::btnAddActionPerformed);
 
         btnAlter.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAlter.setText("ALTER");
@@ -122,6 +123,11 @@ public class HomePage extends javax.swing.JFrame {
         MarketingReport report = new MarketingReport();
         report.setVisible(true);
     }//GEN-LAST:event_btnReportActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        AddPage add = new AddPage();
+        add.setVisible(true);
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
