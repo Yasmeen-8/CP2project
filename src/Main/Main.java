@@ -54,7 +54,15 @@ public class Main{ //START OF CLASS
             case 1 -> {
                 System.out.println("--- Adding new User ---");
                 System.out.println("");
-                addUser();
+                System.out.println("Enter the following number for each category");
+                System.out.println("1. Member: polytechnic Student");
+                System.out.println("2. Member: polytechnic Staff");
+                System.out.println("3. Employee: Other");
+                System.out.println("4. Employee: Trainer");
+                int addType = scan.nextInt();
+                System.out.println("enter name");
+                String addName = scan.next();
+                addUser(addType, addName);
 
             }
             case 2 -> {
@@ -97,16 +105,22 @@ public class Main{ //START OF CLASS
                 System.out.println(" --- Assign Member to trainer---");
                 System.out.println("");
                 System.out.println("Enter trainer ID: ");
-                int input = scan.nextInt();
-                assignMemberToTrainer(getTrainerByID(input));
+                int trainerId = scan.nextInt();
+                Trainer trainer = getTrainerByID(trainerId);
+                System.out.println("Enter the member ID you would like to add: ");
+                int memberIdToAdd = scan.nextInt();
+                assignMemberToTrainer(trainer, memberIdToAdd);
             }
 
             case 6 -> {
                 System.out.println("--- Delete member from trainer list ---");
                 System.out.println("");
                 System.out.println("enter Trainer ID:");
-                int id = scan.nextInt();
-                removeMemberFromTrainer(getTrainerByID(id));
+                int trainerId = scan.nextInt();
+                Trainer trainer = getTrainerByID(trainerId);
+                System.out.println("Enter the member ID you would like to remove: ");
+                int memberIdToRemove = scan.nextInt();
+                removeMemberFromTrainer(trainer, memberIdToRemove);
             }
             case 7 -> {
                 System.out.println("--- Delete user from system ---");
@@ -130,26 +144,35 @@ public class Main{ //START OF CLASS
         }
     }
     
-    public static void assignMemberToTrainer(Trainer trainer){
-        System.out.println("Enter the member ID you would like to add: ");
-        int id = scan.nextInt();
-        Member memb = getMemberByID(id);
-        trainer.assignMember(memb);
+    public static void assignMemberToTrainer(Trainer trainer, int memberID){
+        Member memb = getMemberByID(memberID);
+        if(memb != null){
+            trainer.assignMember(memb);
+            System.out.println("Member assigned to trainer");
+        } else {
+            System.out.println("Member not found; cannot assign");
+        }
     }
     
-    public static void removeMemberFromTrainer(Trainer trainer){
-        System.out.println("Enter the member ID you would like to remove: ");
-        int id = scan.nextInt();
+    public static void removeMemberFromTrainer(Trainer trainer, int memberID){
         ArrayList<Member> membList = trainer.getAssignedMembers();
-        Member person = membList.get(id);
-        if(person != null){
-            trainer.removeMember(person);
+        if(membList == null){
+            System.out.println("Trainer has no assigned members");
+            return;
+        }
+        Member found = null;
+        for(Member m : membList){
+            if(m.getMemberID() == memberID){
+                found = m;
+                break;
+            }
+        }
+        if(found != null){
+            trainer.removeMember(found);
             System.out.println("Member removed");
         }else{
             System.out.println("Member is not in the List");
         }
-        
-        
     }
     
     //returns the member from the list of users
@@ -217,57 +240,33 @@ public class Main{ //START OF CLASS
     }
     return person;}
     
-    public static void addUser(){
-                int input;
-                System.out.println("Enter the following number for each category"); // add a toggle clicking between all of this
-                System.out.println("1. Member: polytechnic Student");
-                System.out.println("2. Member: polytechnic Staff");
-                System.out.println("3. Employee: Other");
-                System.out.println("4. Employee: Trainer");
-                input = scan.nextInt();
-                
+    public static void addUser(int input, String name){
                 switch(input){
                     case 1 -> {
-                        
-                    PolyStudent person = new PolyStudent();
-                    System.out.println("enter name");
-                    person.setName(scan.next());
-                    StoreUsers.users.add(person);
-                    System.out.println("Student added");
-                    
+                        PolyStudent person = new PolyStudent();
+                        person.setName(name);
+                        StoreUsers.users.add(person);
+                        System.out.println("Student added");
                     }
                     case 2 -> {
-                    
-                    PolyStaff person = new PolyStaff();
-                    System.out.println("enter name");
-                    person.setName(scan.next());
-                    StoreUsers.users.add(person);
-                    System.out.println("Staff added");
-                    
+                        PolyStaff person = new PolyStaff();
+                        person.setName(name);
+                        StoreUsers.users.add(person);
+                        System.out.println("Staff added");
                     }
                     case 3 -> {
-                    
-                    OtherEmp person = new OtherEmp();
-                    System.out.println("enter name");
-                    person.setName(scan.next());
-                    StoreUsers.users.add(person);
-                    System.out.println("Other employee added");
-                    
+                        OtherEmp person = new OtherEmp();
+                        person.setName(name);
+                        StoreUsers.users.add(person);
+                        System.out.println("Other employee added");
                     }
                     case 4 -> {
-                    
-                    Trainer person = new Trainer();
-                    System.out.println("enter name");
-                    person.setName(scan.next());
-                    StoreUsers.users.add(person);
-                    System.out.println("Trainer added");
-                    
+                        Trainer person = new Trainer();
+                        person.setName(name);
+                        StoreUsers.users.add(person);
+                        System.out.println("Trainer added");
                     }
-                    
                 }
-                
-                
-                 // we can make it print the user info/id (separate method for this is better to reuse somewhere else)
     }
     
     public static void removeUser(int userID){
