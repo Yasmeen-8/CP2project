@@ -57,9 +57,11 @@ public class HomePage extends javax.swing.JFrame {
 
         btnTrainer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTrainer.setText("TRAINER");
+        btnTrainer.addActionListener(this::btnTrainerActionPerformed);
 
         btnList.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnList.setText("LIST");
+        btnList.addActionListener(this::btnListActionPerformed);
 
         btnReport.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnReport.setText("REPORT");
@@ -128,6 +130,16 @@ public class HomePage extends javax.swing.JFrame {
         AddPage add = new AddPage();
         add.setVisible(true);
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainerActionPerformed
+        TrainerManage manage = new TrainerManage();
+        manage.setVisible(true);
+    }//GEN-LAST:event_btnTrainerActionPerformed
+
+    private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
+        List list = new List();
+        list.setVisible(true);
+    }//GEN-LAST:event_btnListActionPerformed
 
     /**
      * @param args the command line arguments
