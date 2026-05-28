@@ -54,6 +54,7 @@ public class HomePage extends javax.swing.JFrame {
 
         btnRemove.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRemove.setText("REMOVE");
+        btnRemove.addActionListener(this::btnRemoveActionPerformed);
 
         btnTrainer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnTrainer.setText("TRAINER");
@@ -140,6 +141,11 @@ public class HomePage extends javax.swing.JFrame {
         List list = new List();
         list.setVisible(true);
     }//GEN-LAST:event_btnListActionPerformed
+
+    private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        Remove remove = new Remove();
+        remove.setVisible(true);
+    }//GEN-LAST:event_btnRemoveActionPerformed
 
     /**
      * @param args the command line arguments
