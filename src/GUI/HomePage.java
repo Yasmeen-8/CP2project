@@ -51,6 +51,7 @@ public class HomePage extends javax.swing.JFrame {
 
         btnAlter.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAlter.setText("ALTER");
+        btnAlter.addActionListener(this::btnAlterActionPerformed);
 
         btnRemove.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnRemove.setText("REMOVE");
@@ -146,6 +147,11 @@ public class HomePage extends javax.swing.JFrame {
         Remove remove = new Remove();
         remove.setVisible(true);
     }//GEN-LAST:event_btnRemoveActionPerformed
+
+    private void btnAlterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterActionPerformed
+        Alter alter = new Alter();
+        alter.setVisible(true);
+    }//GEN-LAST:event_btnAlterActionPerformed
 
     /**
      * @param args the command line arguments
