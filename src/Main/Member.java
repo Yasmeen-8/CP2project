@@ -2,8 +2,8 @@ package Main;
 
 import java.io.Serializable;
 
+public class Member extends Users implements Serializable {
 
-public class Member extends Users implements Serializable{
     private boolean Active;
     private Employee AssignedTrainer;
     private String dateOfBirth;
@@ -27,5 +27,12 @@ public class Member extends Users implements Serializable{
     public void setAssignedTrainer(Employee AssignedTrainer) {
         this.AssignedTrainer = AssignedTrainer;
     }
-    
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }
