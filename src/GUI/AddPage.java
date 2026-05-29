@@ -114,6 +114,7 @@ public class AddPage extends javax.swing.JFrame {
         tblMembersList = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lblChooseType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblChooseType.setForeground(new java.awt.Color(0, 0, 153));
@@ -360,7 +361,7 @@ public class AddPage extends javax.swing.JFrame {
                                     .addComponent(btnCancel)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(btnSave))))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
