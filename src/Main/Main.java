@@ -274,7 +274,6 @@ public class Main{ //START OF CLASS
                         person.setName(name + " " + surname);
                         person.setPhoneNumber(phone);
                         person.setAddress(address);
-                        person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Other employee added");
                     }
@@ -283,7 +282,6 @@ public class Main{ //START OF CLASS
                         person.setName(name + " " + surname);
                         person.setPhoneNumber(phone);
                         person.setAddress(address);
-                        person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Trainer added");
                     }

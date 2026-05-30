@@ -60,7 +60,7 @@ public class AddPage extends javax.swing.JFrame {
         jScrollPane1.setVisible(false);
         lblSalary.setVisible(false);
         txtSalary.setVisible(false);
-        
+        warningLabel.setVisible(false);
        
         
     }
@@ -119,6 +119,7 @@ public class AddPage extends javax.swing.JFrame {
         tblMembersList = new javax.swing.JTable();
         lblSalary = new javax.swing.JLabel();
         txtSalary = new javax.swing.JTextField();
+        warningLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -294,6 +295,9 @@ public class AddPage extends javax.swing.JFrame {
         txtSalary.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtSalary.addActionListener(this::txtSalaryActionPerformed);
 
+        warningLabel.setBackground(new java.awt.Color(210, 43, 43));
+        warningLabel.setText("WARNING LABEL");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -302,63 +306,14 @@ public class AddPage extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblMembersList)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblMemberID)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblEmployeeID))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(lblSalary)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblDob)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(lblAddress)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblChooseType)
-                                            .addComponent(lblPhone)
-                                            .addComponent(lblFirstname)
-                                            .addComponent(lblSurname))
-                                        .addGap(0, 0, 0)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtFirstname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(radioEmployee)
-                                                .addGap(43, 43, 43)
-                                                .addComponent(radioMember))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(txtMemberID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblTeam)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblDepartment)
-                                    .addGap(12, 12, 12)
-                                    .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioStudent)
-                                        .addGap(80, 80, 80)
-                                        .addComponent(radioStaff))
-                                    .addComponent(txtPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblCourse)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(lblPosition))
+                            .addComponent(lblType)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -372,21 +327,71 @@ public class AddPage extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnYes)
                                 .addGap(88, 88, 88)
-                                .addComponent(btnNo)
-                                .addGap(97, 97, 97)
+                                .addComponent(btnNo))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblMembersList)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblMemberID)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblEmployeeID))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(lblSalary)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lblDob)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(lblAddress)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lblChooseType)
+                                                .addComponent(lblPhone)
+                                                .addComponent(lblFirstname)
+                                                .addComponent(lblSurname))
+                                            .addGap(0, 0, 0)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(txtFirstname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(radioEmployee)
+                                                    .addGap(43, 43, 43)
+                                                    .addComponent(radioMember))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(txtMemberID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblTeam)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblDepartment)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(radioStudent)
+                                            .addGap(80, 80, 80)
+                                            .addComponent(radioStaff))
+                                        .addComponent(txtPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(warningLabel)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnSave)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCancel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblCourse)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblPosition))
-                                    .addComponent(lblType)))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(76, Short.MAX_VALUE))))
+                                .addComponent(btnCancel)))))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,7 +428,8 @@ public class AddPage extends javax.swing.JFrame {
                     .addComponent(lblSalary)
                     .addComponent(lblDob)
                     .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(warningLabel))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTrainer)
@@ -671,27 +677,55 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMemberIDActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        if(radioMember.isSelected()){
+        
         String firstName = txtFirstname.getText();
         String surname = txtSurname.getText();
         int MID = Integer.parseInt(txtMemberID.getText());
         int Phone = Integer.parseInt(txtPhone.getText());
-        String address = txtAddress.getText();
+        String address = txtAddress.getText(); // address the address
         String dob = txtDob.getText();
         String gender = genderRadioGroup.getSelection().getActionCommand();
         
-        if(radioStudent.isSelected()){
-            String position = txtPosition.getText();
-            String department = txtDepartment.getText();
-        }else{
+        
+        String warningMessage = "";
+        
+        boolean validated = checkInput(); //checks if the input is correct
+        warningLabel.setVisible(!validated);
+        if(validated){
+        if(radioMember.isSelected()){ //ADDING MEMBER
+        if(radioStudent.isSelected()){ //Adding a student as a member of the gym
             String course = txtCourse.getText();
             String team = txtTeam.getText();
+            Main.Main.addUser(1, firstName, surname, Phone, address, dob, gender, course, team);
+        }
+        if(radioStaff.isSelected()){ // Adding a tutor/polytechnic staff as a member of the gym
+            String course = txtCourse.getText();
+            String team = txtTeam.getText();
+            Main.Main.addUser(2, firstName, surname, Phone, address, dob, gender, course, team);
+        }}
+        
+        if(radioEmployee.isSelected()){// ADDING EMPLOYEE
+           if(btnYes.isSelected()){ //IS TRAINER // adding a trainer to the employees
+            String position = txtPosition.getText();
+            String department = txtDepartment.getText();
+            Main.Main.addUser(4, firstName, surname, Phone, address, dob, gender, position, department);
+            }else{//IS NOT TRAINER // general employee
+            String position = txtPosition.getText();
+            String department = txtDepartment.getText();
+            Main.Main.addUser(3, firstName, surname, Phone, address, dob, gender, position, department);
+            }
         }
         
-        
-        
+        }else{
+        warningLabel.setText(warningMessage);
         }
+    
+    }
         
+        public boolean checkInput(){
+        
+        
+        return false;
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtSalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaryActionPerformed
@@ -774,6 +808,7 @@ public class AddPage extends javax.swing.JFrame {
     private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtTeam;
     private javax.swing.ButtonGroup typeRadioGroup;
+    private javax.swing.JLabel warningLabel;
     private javax.swing.ButtonGroup yesOrNORadioGroup;
     // End of variables declaration//GEN-END:variables
 }

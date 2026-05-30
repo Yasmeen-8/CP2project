@@ -7,7 +7,15 @@ public class Member extends Users implements Serializable {
     private boolean Active;
     private Employee AssignedTrainer;
     private String dateOfBirth;
+    private String gender;
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     
 
     public int getMemberID() {
