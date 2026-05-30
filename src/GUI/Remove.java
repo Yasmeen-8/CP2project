@@ -59,10 +59,8 @@ public class Remove extends javax.swing.JFrame {
         removeMemberBtn = new javax.swing.JButton();
         Removebtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        roleLbl = new javax.swing.JLabel();
         trainerLbl = new javax.swing.JLabel();
         firstNameLbl = new javax.swing.JLabel();
-        lastNameLbl = new javax.swing.JLabel();
         phoneNumLbl = new javax.swing.JLabel();
         AssignedTrainer = new javax.swing.JLabel();
         TrainerID = new javax.swing.JLabel();
@@ -164,57 +162,53 @@ public class Remove extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(446, 446, 446)
+                        .addComponent(phoneNumLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(138, 138, 138)
                         .addComponent(firstNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(lastNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(446, 446, 446)
-                        .addComponent(phoneNumLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(19, 19, 19)
+                        .addComponent(FirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(Role)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(roleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Trainer)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(trainerLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 436, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(SearchID)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(IDinput, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(SelectType)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(employeeRadio)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(memberRadio))))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(memberRadio))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(SearchID)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(IDinput, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(removeMemberBtn)
-                    .addComponent(PhoneNum)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FirstName))
-                    .addComponent(AssignedTrainer)
-                    .addComponent(TrainerID)
                     .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PhoneNum, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AssignedTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TrainerID, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Surname, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -240,7 +234,6 @@ public class Remove extends javax.swing.JFrame {
                         .addGap(8, 8, 8)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Trainer)
-                            .addComponent(roleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Role))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -255,9 +248,7 @@ public class Remove extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AssignedTrainer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lastNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TrainerID))
+                .addComponent(TrainerID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
@@ -340,9 +331,7 @@ public class Remove extends javax.swing.JFrame {
                 currentMember = null;
 
                 IDinput.setText("");
-                roleLbl.setText("");
                 firstNameLbl.setText("");
-                lastNameLbl.setText("");
                 phoneNumLbl.setText("");
 
                 javax.swing.JOptionPane.showMessageDialog(this, "Member removed successfully!");
@@ -357,7 +346,7 @@ public class Remove extends javax.swing.JFrame {
             if (currentEmployee instanceof Trainer t) {
                 if (!t.getAssignedMembers().isEmpty()) {
                     javax.swing.JOptionPane.showMessageDialog(this,
-                            "Cannot remove employee, members are still assigned.",
+                            "Cannot remove this employee, the members are still assigned.",
                             "Warning", javax.swing.JOptionPane.WARNING_MESSAGE);
                     return;
                 }
@@ -373,10 +362,8 @@ public class Remove extends javax.swing.JFrame {
                 currentEmployee = null;
 
                 IDinput.setText("");
-                roleLbl.setText("");
                 trainerLbl.setText("");
                 firstNameLbl.setText("");
-                lastNameLbl.setText("");
                 phoneNumLbl.setText("");
                 ((DefaultTableModel) Memberslist.getModel()).setRowCount(0);
 
@@ -398,7 +385,6 @@ public class Remove extends javax.swing.JFrame {
 
     private void searchEmployee() {
         String id = IDinput.getText().trim();
-
         if (id.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Please enter an ID.");
             return;
@@ -406,9 +392,8 @@ public class Remove extends javax.swing.JFrame {
 
         currentEmployee = null;
 
-        for (int i = 0; i < StoreUsers.users.size(); i++) {
-            Users u = StoreUsers.users.get(i);
-            if (String.valueOf(u.userID).equalsIgnoreCase(id) && u instanceof Employee) {
+        for (Users u : StoreUsers.users) {
+            if (String.valueOf(u.userID).equals(id) && u instanceof Employee) {
                 currentEmployee = (Employee) u;
                 break;
             }
@@ -416,38 +401,40 @@ public class Remove extends javax.swing.JFrame {
 
         if (currentEmployee == null) {
             javax.swing.JOptionPane.showMessageDialog(this, "No employee found with ID: " + id);
-            roleLbl.setText("-");
-            trainerLbl.setText("-");
-            firstNameLbl.setText("-");
-            lastNameLbl.setText("-");
-            phoneNumLbl.setText("-");
+            Role.setText("Role :");
+            Trainer.setText("Trainer :");
+            FirstName.setText("First Name :");
+            Surname.setText("Surname :");
+            PhoneNum.setText("Phone no :");
             ((DefaultTableModel) Memberslist.getModel()).setRowCount(0);
             return;
         }
 
-        roleLbl.setText("Employee");
+        String fullName = currentEmployee.getName().trim();
+        int separator = fullName.indexOf(" ");
+        String fN = separator != -1 ? fullName.substring(0, separator) : fullName;
+        String sN = separator != -1 ? fullName.substring(separator + 1) : "";
+
+        Role.setText("Role :  Employee");
+        FirstName.setText("First Name :  " + fN);
+        Surname.setText("Surname :  " + sN);
+        PhoneNum.setText("Phone no :  " + currentEmployee.getPhoneNumber());
 
         if (currentEmployee instanceof Trainer t) {
-            trainerLbl.setText(!t.getAssignedMembers().isEmpty() ? "Yes" : "No");
-
+            Trainer.setText("Trainer :  Yes");
             DefaultTableModel model = (DefaultTableModel) Memberslist.getModel();
             model.setRowCount(0);
             for (Member m : t.getAssignedMembers()) {
                 model.addRow(new Object[]{m.userID, m.getName(), String.valueOf(m.getPhoneNumber())});
             }
         } else {
-            trainerLbl.setText("No");
+            Trainer.setText("Trainer :  No");
             ((DefaultTableModel) Memberslist.getModel()).setRowCount(0);
         }
-
-        firstNameLbl.setText(currentEmployee.getName());
-        lastNameLbl.setText("");
-        phoneNumLbl.setText(String.valueOf(currentEmployee.getPhoneNumber()));
     }
 
     private void searchMember() {
         String id = IDinput.getText().trim();
-
         if (id.isEmpty()) {
             javax.swing.JOptionPane.showMessageDialog(this, "Please enter an ID.");
             return;
@@ -455,9 +442,8 @@ public class Remove extends javax.swing.JFrame {
 
         currentMember = null;
 
-        for (int i = 0; i < StoreUsers.users.size(); i++) {
-            Users u = StoreUsers.users.get(i);
-            if (String.valueOf(u.userID).equalsIgnoreCase(id) && u instanceof Member) {
+        for (Users u : StoreUsers.users) {
+            if (String.valueOf(u.userID).equals(id) && u instanceof Member) {
                 currentMember = (Member) u;
                 break;
             }
@@ -465,25 +451,32 @@ public class Remove extends javax.swing.JFrame {
 
         if (currentMember == null) {
             javax.swing.JOptionPane.showMessageDialog(this, "No member found with ID: " + id);
-            roleLbl.setText("-");
-            firstNameLbl.setText("-");
-            lastNameLbl.setText("-");
-            phoneNumLbl.setText("-");
+            Role.setText("Role :");
+            FirstName.setText("First Name :");
+            Surname.setText("Surname :");
+            PhoneNum.setText("Phone no :");
+            AssignedTrainer.setText("Assigned Trainer :");
+            TrainerID.setText("Trainer ID :");
             return;
         }
 
-        roleLbl.setText("Member");
-        firstNameLbl.setText(currentMember.getName());
-        lastNameLbl.setText("");
-        phoneNumLbl.setText(String.valueOf(currentMember.getPhoneNumber()));
+        String fullName = currentMember.getName().trim();
+        int separator = fullName.indexOf(" ");
+        String fN = separator != -1 ? fullName.substring(0, separator) : fullName;
+        String sN = separator != -1 ? fullName.substring(separator + 1) : "";
+
+        Role.setText("Role :  Member");
+        FirstName.setText("First Name :  " + fN);
+        Surname.setText("Surname :  " + sN);
+        PhoneNum.setText("Phone no :  " + currentMember.getPhoneNumber());
 
         Trainer t = (Trainer) currentMember.getAssignedTrainer();
         if (t != null) {
-            firstNameLbl.setText(t.getName());
-            lastNameLbl.setText(String.valueOf(t.userID));
+            AssignedTrainer.setText("Assigned Trainer :  " + t.getName());
+            TrainerID.setText("Trainer ID :  " + t.userID);
         } else {
-            firstNameLbl.setText("None");
-            lastNameLbl.setText("-");
+            AssignedTrainer.setText("Assigned Trainer : None");
+            TrainerID.setText("Trainer ID : No ID found");
         }
     }
 
@@ -491,13 +484,11 @@ public class Remove extends javax.swing.JFrame {
         SearchID.setVisible(false);
         IDinput.setVisible(false);
         Role.setVisible(false);
-        roleLbl.setVisible(false);
         Trainer.setVisible(false);
         trainerLbl.setVisible(false);
         FirstName.setVisible(false);
         firstNameLbl.setVisible(false);
         Surname.setVisible(false);
-        lastNameLbl.setVisible(false);
         PhoneNum.setVisible(false);
         phoneNumLbl.setVisible(false);
         jLabel3.setVisible(false);
@@ -514,13 +505,11 @@ public class Remove extends javax.swing.JFrame {
         SearchID.setVisible(true);
         IDinput.setVisible(true);
         Role.setVisible(true);
-        roleLbl.setVisible(true);
         Trainer.setVisible(true);
         trainerLbl.setVisible(true);
         FirstName.setVisible(true);
         firstNameLbl.setVisible(true);
         Surname.setVisible(true);
-        lastNameLbl.setVisible(true);
         PhoneNum.setVisible(true);
         phoneNumLbl.setVisible(true);
         jLabel3.setVisible(true);
@@ -535,11 +524,9 @@ public class Remove extends javax.swing.JFrame {
         SearchID.setVisible(false);
         IDinput.setVisible(false);
         Role.setVisible(false);
-        roleLbl.setVisible(false);
         FirstName.setVisible(false);
         firstNameLbl.setVisible(false);
         Surname.setVisible(false);
-        lastNameLbl.setVisible(false);
         PhoneNum.setVisible(false);
         phoneNumLbl.setVisible(false);
         AssignedTrainer.setVisible(false);
@@ -558,11 +545,9 @@ public class Remove extends javax.swing.JFrame {
         SearchID.setVisible(true);
         IDinput.setVisible(true);
         Role.setVisible(true);
-        roleLbl.setVisible(true);
         FirstName.setVisible(true);
         firstNameLbl.setVisible(true);
         Surname.setVisible(true);
-        lastNameLbl.setVisible(true);
         PhoneNum.setVisible(true);
         phoneNumLbl.setVisible(true);
         AssignedTrainer.setVisible(true);
@@ -576,6 +561,8 @@ public class Remove extends javax.swing.JFrame {
         if (employeeRadio.isSelected()) {
             hideMemberSection();
             showEmployeeSection();
+            IDinput.setText("");
+            this.pack();
         }
     }//GEN-LAST:event_employeeRadioActionPerformed
 
@@ -583,6 +570,8 @@ public class Remove extends javax.swing.JFrame {
         if (memberRadio.isSelected()) {
             hideEmployeeSection();
             showMemberSection();
+            IDinput.setText("");
+            this.pack();
         }
     }//GEN-LAST:event_memberRadioActionPerformed
 
@@ -590,6 +579,7 @@ public class Remove extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        StoreUsers.loadStartupFile();
         /* Set the Nimbus look and feel */
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
@@ -622,11 +612,9 @@ public class Remove extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lastNameLbl;
     private javax.swing.JRadioButton memberRadio;
     private javax.swing.JLabel phoneNumLbl;
     private javax.swing.JButton removeMemberBtn;
-    private javax.swing.JLabel roleLbl;
     private javax.swing.JLabel trainerLbl;
     // End of variables declaration//GEN-END:variables
 }

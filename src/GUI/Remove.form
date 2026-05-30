@@ -53,16 +53,16 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
+                          <Component id="phoneNumLbl" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
                           <Component id="firstNameLbl" min="-2" pref="95" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
-                          <Component id="lastNameLbl" min="-2" pref="78" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="446" max="-2" attributes="0"/>
-                          <Component id="phoneNumLbl" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Component id="FirstName" min="-2" pref="273" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -72,9 +72,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Component id="Role" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="roleLbl" min="-2" pref="71" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="Trainer" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="trainerLbl" min="-2" pref="69" max="-2" attributes="0"/>
@@ -82,14 +80,10 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jSeparator1" alignment="0" min="-2" pref="436" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                              <Component id="jSeparator2" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="SearchID" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          <Component id="IDinput" min="-2" pref="120" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="SelectType" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -97,9 +91,13 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="memberRadio" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="SearchID" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="IDinput" min="-2" pref="120" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <Component id="jSeparator2" alignment="0" min="-2" pref="408" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -110,15 +108,12 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="removeMemberBtn" min="-2" max="-2" attributes="0"/>
-                      <Component id="PhoneNum" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="Surname" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="FirstName" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="AssignedTrainer" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="TrainerID" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" alignment="0" min="-2" pref="331" max="-2" attributes="0"/>
+                      <Component id="PhoneNum" alignment="0" min="-2" pref="239" max="-2" attributes="0"/>
+                      <Component id="AssignedTrainer" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
+                      <Component id="TrainerID" alignment="0" min="-2" pref="263" max="-2" attributes="0"/>
+                      <Component id="Surname" alignment="0" min="-2" pref="273" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -150,7 +145,6 @@
                           <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="Trainer" min="-2" max="-2" attributes="0"/>
-                              <Component id="roleLbl" min="-2" pref="17" max="-2" attributes="0"/>
                               <Component id="Role" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -169,10 +163,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="AssignedTrainer" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="lastNameLbl" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="TrainerID" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="TrainerID" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -336,13 +327,9 @@
             <Property name="text" type="java.lang.String" value="Members List :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="roleLbl">
-        </Component>
         <Component class="javax.swing.JLabel" name="trainerLbl">
         </Component>
         <Component class="javax.swing.JLabel" name="firstNameLbl">
-        </Component>
-        <Component class="javax.swing.JLabel" name="lastNameLbl">
         </Component>
         <Component class="javax.swing.JLabel" name="phoneNumLbl">
         </Component>

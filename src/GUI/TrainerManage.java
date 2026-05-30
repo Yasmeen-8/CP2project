@@ -35,7 +35,7 @@ public class TrainerManage extends javax.swing.JFrame {
         model.setRowCount(0);
 
         loadTrainers();
-        loadUnassignedMembers();
+        loadMembers();
 
         this.pack();
         this.setLocationRelativeTo(null);
@@ -60,12 +60,9 @@ public class TrainerManage extends javax.swing.JFrame {
         MemberTable = new javax.swing.JTable();
         AssignMemberBtn = new javax.swing.JButton();
         RemoveMemberBtn = new javax.swing.JButton();
-        RemoveTrainerAssignedBtn = new javax.swing.JButton();
-        RemoveMemberPanel = new javax.swing.JPanel();
-        RemoveMember = new javax.swing.JLabel();
-        RemoveCombobox = new javax.swing.JComboBox<>();
         MemberCombobox = new javax.swing.JComboBox<>();
         TrainerCombobox = new javax.swing.JComboBox<>();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,42 +114,6 @@ public class TrainerManage extends javax.swing.JFrame {
         RemoveMemberBtn.setText("Remove Member");
         RemoveMemberBtn.addActionListener(this::RemoveMemberBtnActionPerformed);
 
-        RemoveTrainerAssignedBtn.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        RemoveTrainerAssignedBtn.setForeground(new java.awt.Color(0, 0, 153));
-        RemoveTrainerAssignedBtn.setText("Remove Member from trainer");
-        RemoveTrainerAssignedBtn.addActionListener(this::RemoveTrainerAssignedBtnActionPerformed);
-
-        RemoveMemberPanel.setBackground(new java.awt.Color(214, 217, 223));
-        RemoveMemberPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        RemoveMember.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        RemoveMember.setForeground(new java.awt.Color(0, 0, 153));
-        RemoveMember.setText("Remove member from trainer :");
-
-        RemoveCombobox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        RemoveCombobox.addActionListener(this::RemoveComboboxActionPerformed);
-
-        javax.swing.GroupLayout RemoveMemberPanelLayout = new javax.swing.GroupLayout(RemoveMemberPanel);
-        RemoveMemberPanel.setLayout(RemoveMemberPanelLayout);
-        RemoveMemberPanelLayout.setHorizontalGroup(
-            RemoveMemberPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RemoveMemberPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(RemoveMemberPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RemoveMember)
-                    .addComponent(RemoveCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(329, Short.MAX_VALUE))
-        );
-        RemoveMemberPanelLayout.setVerticalGroup(
-            RemoveMemberPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RemoveMemberPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(RemoveMember)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RemoveCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
         MemberCombobox.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         MemberCombobox.addActionListener(this::MemberComboboxActionPerformed);
 
@@ -164,31 +125,31 @@ public class TrainerManage extends javax.swing.JFrame {
             TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TrainerManagePanelLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(RemoveMemberPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(TrainerManagePanelLayout.createSequentialGroup()
-                        .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(TrainerManagePanelLayout.createSequentialGroup()
-                                .addComponent(Trainerinput)
-                                .addGap(18, 18, 18)
-                                .addComponent(TrainerCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(SelectTrainer)
-                            .addComponent(Assigning)
-                            .addComponent(Select)
-                            .addComponent(MemberCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Assigning1))
-                        .addGap(268, 268, 268))
-                    .addGroup(TrainerManagePanelLayout.createSequentialGroup()
-                        .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(RemoveMemberBtn)
-                            .addComponent(AssignMemberBtn))
-                        .addGap(11, 11, 11)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(Trainerinput)
+                        .addGap(18, 18, 18)
+                        .addComponent(TrainerCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SelectTrainer)
+                    .addComponent(Assigning)
+                    .addComponent(Select)
+                    .addComponent(Assigning1)
+                    .addComponent(MemberCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(282, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator1)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RemoveTrainerAssignedBtn)
-                .addGap(24, 24, 24))
+                .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
+                        .addComponent(AssignMemberBtn)
+                        .addGap(54, 54, 54))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
+                        .addComponent(RemoveMemberBtn)
+                        .addGap(55, 55, 55))))
         );
         TrainerManagePanelLayout.setVerticalGroup(
             TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,19 +166,17 @@ public class TrainerManage extends javax.swing.JFrame {
                 .addComponent(Select)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MemberCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(AssignMemberBtn)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Assigning1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addComponent(RemoveMemberBtn)
-                .addGap(18, 18, 18)
-                .addComponent(RemoveMemberPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(RemoveTrainerAssignedBtn)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -228,7 +187,9 @@ public class TrainerManage extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TrainerManagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(TrainerManagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -236,23 +197,17 @@ public class TrainerManage extends javax.swing.JFrame {
 
     private void TrainerComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerComboboxActionPerformed
         String trainerSelected = (String) TrainerCombobox.getSelectedItem();
-
         if (trainerSelected == null || trainerSelected.equals("Select a Trainer") || trainerSelected.equals("No trainers found")) {
             DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
             model.setRowCount(0);
-            RemoveCombobox.removeAllItems();
             return;
         }
 
-        int selectedID = Integer.parseInt(trainerSelected.split(" ")[0].trim());
+        int selectedID = Integer.parseInt(trainerSelected.split(" - ")[0].trim());
 
-        ArrayList<Users> users = StoreUsers.users;
-
-        for (int i = 0; i < users.size(); i++) {
-            Users u = users.get(i);
-            if (u.userID == selectedID && u instanceof Trainer) {
-                Trainer selectedTrainer = (Trainer) u;
-                loadAssignedMembers(selectedTrainer);
+        for (Users u : StoreUsers.users) {
+            if (u.userID == selectedID && u instanceof Trainer t) {
+                loadAssignedMembers(t);
                 break;
             }
         }
@@ -261,84 +216,6 @@ public class TrainerManage extends javax.swing.JFrame {
     private void MemberComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberComboboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MemberComboboxActionPerformed
-
-    private void RemoveComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveComboboxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RemoveComboboxActionPerformed
-
-    private void RemoveTrainerAssignedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerAssignedBtnActionPerformed
-        String trainerSelected = (String) TrainerCombobox.getSelectedItem();
-        String memberSelected = (String) RemoveCombobox.getSelectedItem();
-
-        if (trainerSelected == null) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Please select a trainer.");
-            return;
-        }
-
-        if (memberSelected == null) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Please select a member to remove.");
-            return;
-        }
-
-        String trainerId = trainerSelected.split(" - ")[0].trim();
-        String memberId = memberSelected.split(" - ")[0].trim();
-
-        Trainer selectedTrainer = null;
-
-        java.util.ArrayList<Users> users = StoreUsers.users;
-
-        for (int i = 0; i < users.size(); i++) {
-            Users u = users.get(i);
-            if (String.valueOf(u.userID).equalsIgnoreCase(trainerId) && u instanceof Trainer) {
-                selectedTrainer = (Trainer) u;
-                break;
-            }
-        }
-
-        if (selectedTrainer == null) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Trainer not found.");
-            return;
-        }
-
-        Member toRemove = null;
-
-        java.util.ArrayList<Member> members = selectedTrainer.getAssignedMembers();
-
-        for (int i = 0; i < members.size(); i++) {
-            Member m = members.get(i);
-            if (String.valueOf(m.userID).equals(memberId)) {
-                toRemove = m;
-                break;
-            }
-        }
-
-        if (toRemove == null) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Member not found.");
-            return;
-        }
-
-        int confirm = javax.swing.JOptionPane.showConfirmDialog(this,
-                "Are you sure you want to remove this member from the trainer?",
-                "Confirm", javax.swing.JOptionPane.YES_NO_OPTION);
-
-        if (confirm == javax.swing.JOptionPane.YES_OPTION) {
-            selectedTrainer.getAssignedMembers().remove(toRemove);
-            StoreUsers.save();
-
-            RemoveCombobox.removeItem(memberSelected);
-
-            DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
-            for (int i = 0; i < model.getRowCount(); i++) {
-                if (model.getValueAt(i, 0).toString().equals(memberId)) {
-                    model.removeRow(i);
-                    break;
-                }
-            }
-
-            javax.swing.JOptionPane.showMessageDialog(this, "Member removed from trainer successfully!");
-            loadUnassignedMembers();
-        }
-    }//GEN-LAST:event_RemoveTrainerAssignedBtnActionPerformed
 
     private void RemoveMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveMemberBtnActionPerformed
         String trainerSelected = (String) TrainerCombobox.getSelectedItem();
@@ -402,7 +279,6 @@ public class TrainerManage extends javax.swing.JFrame {
             StoreUsers.save();
 
             model.removeRow(selectedRow);
-            RemoveCombobox.removeItem(toRemove.userID + " - " + toRemove.getName());
 
             javax.swing.JOptionPane.showMessageDialog(this, "Member removed successfully!");
             loadUnassignedMembers();
@@ -463,12 +339,25 @@ public class TrainerManage extends javax.swing.JFrame {
             return;
         }
 
-        ArrayList<Users> users = StoreUsers.users;
-
-        for (int i = 0; i < users.size(); i++) {
-            Users u = users.get(i);
+        for (Users u : StoreUsers.users) {
             if (u instanceof Trainer) {
-                TrainerCombobox.addItem(u.userID + " " + u.getName());
+                TrainerCombobox.addItem(u.userID + " - " + u.getName());
+            }
+        }
+    }
+    
+    private void loadMembers() {
+        MemberCombobox.removeAllItems();
+        MemberCombobox.addItem("Select a Member to assign");
+
+        if (StoreUsers.users == null || StoreUsers.users.isEmpty()) {
+            MemberCombobox.addItem("No members to assign were found");
+            return;
+        }
+
+        for (Users u : StoreUsers.users) {
+            if (u instanceof Member) {
+                MemberCombobox.addItem(u.userID + " - " + u.getName());
             }
         }
     }
@@ -509,8 +398,7 @@ public class TrainerManage extends javax.swing.JFrame {
     private void loadAssignedMembers(Trainer trainer) {
         DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
         model.setRowCount(0);
-        RemoveCombobox.removeAllItems();
-        RemoveCombobox.addItem("Select a Member to remove");
+  
 
         ArrayList<Member> members = trainer.getAssignedMembers();
 
@@ -521,7 +409,6 @@ public class TrainerManage extends javax.swing.JFrame {
                 m.getName(),
                 String.valueOf(m.getPhoneNumber())
             });
-            RemoveCombobox.addItem(m.userID + " - " + m.getName());
         }
     }
 
@@ -529,6 +416,7 @@ public class TrainerManage extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        StoreUsers.loadStartupFile();
         /* Set the Nimbus look and feel */
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
@@ -546,17 +434,14 @@ public class TrainerManage extends javax.swing.JFrame {
     private javax.swing.JLabel Assigning1;
     private javax.swing.JComboBox<String> MemberCombobox;
     private javax.swing.JTable MemberTable;
-    private javax.swing.JComboBox<String> RemoveCombobox;
-    private javax.swing.JLabel RemoveMember;
     private javax.swing.JButton RemoveMemberBtn;
-    private javax.swing.JPanel RemoveMemberPanel;
-    private javax.swing.JButton RemoveTrainerAssignedBtn;
     private javax.swing.JLabel Select;
     private javax.swing.JLabel SelectTrainer;
     private javax.swing.JComboBox<String> TrainerCombobox;
     private javax.swing.JPanel TrainerManagePanel;
     private javax.swing.JLabel Trainerinput;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
 }
