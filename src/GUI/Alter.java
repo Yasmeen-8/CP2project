@@ -274,7 +274,7 @@ public class Alter extends javax.swing.JFrame {
             snInput.setText("");
             addressInput.setText(currentMember.getAddress() != null ? currentMember.getAddress() : "");
             phoneInput.setText(String.valueOf(currentMember.getPhoneNumber()));
-            DOBInput.setText(currentMember.getDateOfBirth() != null ? currentMember.getDateOfBirth() : "");
+            DOBInput.setText(currentMember.getDOB() != null ? currentMember.getDOB() : "");
             showMemberEditSection();
         }
     }//GEN-LAST:event_editbtnActionPerformed
@@ -425,11 +425,26 @@ public class Alter extends javax.swing.JFrame {
             salaryDisplay.setText("Salary :  " + currentEmployee.getSalary());
         }
 
-        fnDisplay.setText("First name :  " + currentEmployee.getName());
-        snDisplay.setText("Surname :  ");         
-        addressDisplay.setText("Address :  ");  
+        String fullName = currentEmployee.getName().trim();
+        int seperator = fullName.indexOf(" ");
+
+        String fN;
+        String sN;
+
+        if (seperator != -1) {
+            fN = fullName.substring(0, seperator);
+            sN = fullName.substring(seperator + 1);
+        } else {
+            fN = fullName;
+            sN = "";
+        }
+
+        fnDisplay.setText("First name :  " + fN);
+        snDisplay.setText("Surname :  " + sN);
+        addressDisplay.setText("Address :  " + currentEmployee.getAddress());
         phoneDisplay.setText("Phone no :  " + currentEmployee.getPhoneNumber());
         hideEditSection();
+
     }
 
     private void searchMember() {
@@ -465,7 +480,7 @@ public class Alter extends javax.swing.JFrame {
         snDisplay.setText("Surname :  ");
         addressDisplay.setText("Address :  " + currentMember.getAddress());
         phoneDisplay.setText("Phone no :  " + currentMember.getPhoneNumber());
-        DOBDisplay.setText("DOB :  " + currentMember.getDateOfBirth());
+        DOBDisplay.setText("DOB :  " + currentMember.getDOB());
         hideEditSection();
     }//GEN-LAST:event_IDinputActionPerformed
 
@@ -490,7 +505,7 @@ public class Alter extends javax.swing.JFrame {
                 currentEmployee.setPhoneNumber(Integer.parseInt(phoneInput.getText().trim()));
                 currentEmployee.setSalary(Double.parseDouble(salaryInput.getText().trim()));
                 StoreUsers.save();
-                searchEmployee();   
+                searchEmployee();
                 hideEditSection();
                 javax.swing.JOptionPane.showMessageDialog(this, "Employee updated successfully.");
             } catch (NumberFormatException e) {
@@ -510,9 +525,9 @@ public class Alter extends javax.swing.JFrame {
                 currentMember.setName(fnInput.getText().trim());
                 currentMember.setAddress(addressInput.getText().trim());
                 currentMember.setPhoneNumber(Integer.parseInt(phoneInput.getText().trim()));
-                currentMember.setDateOfBirth(DOBInput.getText().trim());
+                currentMember.setDOB(DOBInput.getText().trim());
                 StoreUsers.save();
-                searchMember();     
+                searchMember();
                 hideEditSection();
                 javax.swing.JOptionPane.showMessageDialog(this, "Member updated successfully.");
             } catch (NumberFormatException e) {
@@ -525,6 +540,8 @@ public class Alter extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        StoreUsers.loadStartupFile();
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -540,7 +557,6 @@ public class Alter extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Alter().setVisible(true));
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DOBAlter;
     private javax.swing.JLabel DOBDisplay;
