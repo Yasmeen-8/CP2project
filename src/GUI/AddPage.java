@@ -695,11 +695,11 @@ public class AddPage extends javax.swing.JFrame {
                 int phone = Integer.parseInt(txtPhone.getText().trim());
                 if(radioStudent.isSelected()){ //Adding a student as a member of the gym
                     String course = txtCourse.getText().trim();
-                    String team = txtTeam.getText().trim();
+                    String team = isBlank(txtTeam.getText()) ? null : txtTeam.getText().trim();
                     Main.Main.addUser(1, firstName, surname, phone, address, dob, gender, course, team);
                 } else if(radioStaff.isSelected()){ // Adding a tutor/polytechnic staff as a member of the gym
                     String course = txtCourse.getText().trim();
-                    String team = txtTeam.getText().trim();
+                    String team = isBlank(txtTeam.getText()) ? null : txtTeam.getText().trim();
                     Main.Main.addUser(2, firstName, surname, phone, address, dob, gender, course, team);
                 }
             }
@@ -721,6 +721,7 @@ public class AddPage extends javax.swing.JFrame {
     }
         
         public boolean checkInput(){
+            
         if(!radioMember.isSelected() && !radioEmployee.isSelected()){
             showWarning("Select whether you are adding a member or an employee.");
             return false;
@@ -782,10 +783,6 @@ public class AddPage extends javax.swing.JFrame {
                     showWarning("Course is required for a student.");
                     return false;
                 }
-                if(isBlank(txtTeam.getText())){
-                    showWarning("Team is required for a student.");
-                    return false;
-                }
             }
 
             if(radioStaff.isSelected()){
@@ -797,6 +794,8 @@ public class AddPage extends javax.swing.JFrame {
                     showWarning("Department is required for staff.");
                     return false;
                 }
+                
+                
             }
         }
 
