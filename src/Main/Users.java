@@ -8,14 +8,14 @@ public class Users implements Serializable{
     private String address;
     private int phoneNumber;
     private String age;
-    public int userID;
-    private char gender;
+    static int userID;
+    private String gender;
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

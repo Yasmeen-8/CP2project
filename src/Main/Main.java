@@ -62,7 +62,6 @@ public class Main{ //START OF CLASS
                 int addType = scan.nextInt();
                 System.out.println("enter name");
                 String addName = scan.next();
-                addUser(addType, addName);
 
             }
             case 2 -> {
@@ -240,29 +239,51 @@ public class Main{ //START OF CLASS
     }
     return person;}
     
-    public static void addUser(int input, String name){
+    
+    //Main.Main.addUser(1, firstName, surname, Phone, address, dob, gender, course, team);
+    public static void addUser(int input, String name, String surname, int phone, String address, String dob, String gender, String other1, String other2){
                 switch(input){
-                    case 1 -> {
+                    case 1 -> { // adding a student
                         PolyStudent person = new PolyStudent();
-                        person.setName(name);
+                        person.setName(name + " " + surname);
+                        person.setPhoneNumber(phone);
+                        person.setAddress(address);
+                        person.setDateOfBirth(dob);
+                        person.setGender(gender);
+                        person.setCourse(other1);
+                        if(other2 != null){
+                        person.setInteam(true);
+                        person.setTeams(other2);
+                        }
                         StoreUsers.users.add(person);
                         System.out.println("Student added");
+                        
                     }
-                    case 2 -> {
+                    case 2 -> { // adding a staff member
                         PolyStaff person = new PolyStaff();
-                        person.setName(name);
+                        person.setName(name + " " + surname);
+                        person.setPhoneNumber(phone);
+                        person.setAddress(address);
+                        person.setDateOfBirth(dob);
+                        person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Staff added");
                     }
-                    case 3 -> {
+                    case 3 -> { // adding a employee
                         OtherEmp person = new OtherEmp();
-                        person.setName(name);
+                        person.setName(name + " " + surname);
+                        person.setPhoneNumber(phone);
+                        person.setAddress(address);
+                        person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Other employee added");
                     }
-                    case 4 -> {
+                    case 4 -> { //adding a trainer employee
                         Trainer person = new Trainer();
-                        person.setName(name);
+                        person.setName(name + " " + surname);
+                        person.setPhoneNumber(phone);
+                        person.setAddress(address);
+                        person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Trainer added");
                     }
@@ -293,8 +314,8 @@ public static String generateMarketingReport(String type) {
                 text += "Name: " + s.getName() + "\n";
                 text += "Address: " + s.getAddress() + "\n";
                 text += "Phone: " + s.getPhoneNumber() + "\n";
-                text += "Position: " + s.position + "\n";
-                text += "Department: " + s.department + "\n";
+                text += "Position: " + s.getPosition() + "\n";
+                text += "Department: " + s.getDepartment() + "\n";
 
                 text += "----------------------------------\n";
 
@@ -320,8 +341,8 @@ public static String generateMarketingReport(String type) {
                 text += "Name: " + s.getName() + "\n";
                 text += "Address: " + s.getAddress() + "\n";
                 text += "Phone: " + s.getPhoneNumber() + "\n";
-                text += "Course: " + s.course + "\n";
-                text += "Team: " + s.Teams + "\n";
+                text += "Course: " + s.getCourse() + "\n";
+                text += "Team: " + s.getTeams() + "\n";
 
                 text += "----------------------------------\n";
 
