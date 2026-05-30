@@ -8,8 +8,9 @@ public class Users implements Serializable{
     private String address;
     private int phoneNumber;
     private String age;
-    static int userID;
-  
+    public int userID;
+    private String DOB;
+    private double salary; 
 
     public String getName() {
         return name;
@@ -49,6 +50,22 @@ public class Users implements Serializable{
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
     
     
