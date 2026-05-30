@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class PolyStaff extends Member implements Serializable{
     double staffDiscount;
-    private String position;
+    public String position;
 
     public double getStaffDiscount() {
         return staffDiscount;
@@ -29,7 +29,7 @@ public class PolyStaff extends Member implements Serializable{
     public void setDepartment(String department) {
         this.department = department;
     }
-    private String department;
+    public String department;
     
     PolyStaff(){
         this.userID++;

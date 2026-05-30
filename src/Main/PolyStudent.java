@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class PolyStudent extends Member implements Serializable{
     private double studentDiscount;
-    private String course;
+    public String course;
     private boolean Inteam;
-    private String Teams;
+    public String Teams;
     public double getStudentDiscount() {
         return studentDiscount;
     }
