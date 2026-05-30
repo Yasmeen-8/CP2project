@@ -6,8 +6,12 @@ public class Member extends Users implements Serializable {
 
     private boolean Active;
     private Employee AssignedTrainer;
-    private String dateOfBirth;
     private String gender;
+    private static int idCounter = 99;
+
+    public Member() {
+        this.userID = idCounter++;
+    }
 
     public String getGender() {
         return gender;
@@ -16,7 +20,6 @@ public class Member extends Users implements Serializable {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    
 
     public int getMemberID() {
         return this.userID;
@@ -38,11 +41,4 @@ public class Member extends Users implements Serializable {
         this.AssignedTrainer = AssignedTrainer;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 }

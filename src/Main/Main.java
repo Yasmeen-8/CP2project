@@ -248,7 +248,7 @@ public class Main{ //START OF CLASS
                         person.setName(name + " " + surname);
                         person.setPhoneNumber(phone);
                         person.setAddress(address);
-                        person.setDateOfBirth(dob);
+                        person.setDOB(dob);
                         person.setGender(gender);
                         person.setCourse(other1);
                         if(other2 != null){
@@ -264,7 +264,7 @@ public class Main{ //START OF CLASS
                         person.setName(name + " " + surname);
                         person.setPhoneNumber(phone);
                         person.setAddress(address);
-                        person.setDateOfBirth(dob);
+                        person.setDOB(dob);
                         person.setGender(gender);
                         StoreUsers.users.add(person);
                         System.out.println("Staff added");
