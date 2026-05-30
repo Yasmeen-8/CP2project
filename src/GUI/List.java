@@ -88,6 +88,8 @@ public class List extends javax.swing.JFrame {
         TrainerInfo = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         TrainerTable = new javax.swing.JTable();
+        memberInput = new javax.swing.JLabel();
+        memberComboBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -162,11 +164,13 @@ public class List extends javax.swing.JFrame {
 
         TrainerCombobox.addActionListener(this::TrainerComboboxActionPerformed);
 
+        empRadio.setBackground(new java.awt.Color(214, 217, 223));
         empRadio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         empRadio.setForeground(new java.awt.Color(0, 0, 153));
         empRadio.setText("Trainer");
         empRadio.addActionListener(this::empRadioActionPerformed);
 
+        memberRadio.setBackground(new java.awt.Color(214, 217, 223));
         memberRadio.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         memberRadio.setForeground(new java.awt.Color(0, 0, 153));
         memberRadio.setText("Member");
@@ -190,31 +194,16 @@ public class List extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(TrainerTable);
 
+        memberInput.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        memberInput.setForeground(new java.awt.Color(0, 0, 153));
+        memberInput.setText("Member :");
+
+        memberComboBox.addActionListener(this::memberComboBoxActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(Trainerselection)
-                .addGap(73, 73, 73)
-                .addComponent(empRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(memberRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(Trainer, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(TrainerCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(TrainerIDTop))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(NameTop))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(PhoneTop))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -224,15 +213,6 @@ public class List extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(PersonalInfo))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(TrainerIDAssigned))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(NameAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(PhoneAssigned))
             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
@@ -253,31 +233,66 @@ public class List extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(Trainerselection)
+                .addGap(73, 73, 73)
+                .addComponent(empRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(memberRadio, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TrainerIDTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(memberInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Trainer, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TrainerCombobox, 0, 138, Short.MAX_VALUE)
+                            .addComponent(memberComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(NameTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PhoneTop, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(TrainerIDAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(PhoneAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(NameAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Trainerselection)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
+                        .addGap(16, 16, 16)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(empRadio)
-                            .addComponent(memberRadio))))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Trainer)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(TrainerCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                            .addComponent(Trainerselection)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(empRadio)
+                                    .addComponent(memberRadio))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Trainer)
+                            .addComponent(TrainerCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(3, 3, 3)
+                        .addComponent(memberInput))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(memberComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(TrainerIDTop)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(NameTop)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PhoneTop)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addComponent(Membersassigned)
@@ -339,6 +354,9 @@ public class List extends javax.swing.JFrame {
     }//GEN-LAST:event_PrintbtnActionPerformed
 
     private void TrainerComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerComboboxActionPerformed
+        if (loading) {
+            return;
+        }
         String selected = (String) TrainerCombobox.getSelectedItem();
 
         if (selected == null || selected.equals("Select a Trainer") || selected.equals("No trainers found")) {
@@ -347,18 +365,14 @@ public class List extends javax.swing.JFrame {
         }
 
         int selectedID = Integer.parseInt(selected.split(" ")[0].trim());
-
-        ArrayList<Users> users = StoreUsers.users;
-
-        for (int i = 0; i < users.size(); i++) {
-            Users u = users.get(i);
-            if (u.userID == selectedID && u instanceof Trainer) {
-                Trainer selectedTrainer = (Trainer) u;
-                displayTrainerInfo(selectedTrainer);
-                loadAssignedMembers(selectedTrainer);
+        for (Users u : StoreUsers.users) {
+            if (u.userID == selectedID && u instanceof Trainer t) {
+                displayTrainerInfo(t);
+                loadAssignedMembers(t);
                 break;
             }
         }
+
     }//GEN-LAST:event_TrainerComboboxActionPerformed
 
     private void empRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRadioActionPerformed
@@ -375,7 +389,41 @@ public class List extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_memberRadioActionPerformed
 
+    private void memberComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberComboBoxActionPerformed
+        String selected = (String) memberComboBox.getSelectedItem();
+        if (selected == null || selected.equals("Select a Member")) {
+            return;
+        }
+
+        int selectedID = Integer.parseInt(selected.split(" ")[0].trim());
+
+        for (Users u : StoreUsers.users) {
+            if (u.userID == selectedID && u instanceof Member m) {
+                TrainerIDTop.setText("Member ID : " + m.userID);
+                NameTop.setText("Name : " + m.getName());
+                PhoneTop.setText("Phone : " + m.getPhoneNumber());
+
+                for (Users t : StoreUsers.users) {
+                    if (t instanceof Trainer trainer) {
+                        for (Member assigned : trainer.getAssignedMembers()) {
+                            if (assigned.userID == m.userID) {
+                                TrainerIDAssigned.setText("Trainer ID : " + trainer.userID);
+                                NameAssigned.setText("Name : " + trainer.getName());
+                                PhoneAssigned.setText("Phone : " + trainer.getPhoneNumber());
+                                loadAssignedMembers(trainer);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }//GEN-LAST:event_memberComboBoxActionPerformed
+
     private void hideMembersSection() {
+        memberInput.setVisible(false);
+        memberComboBox.setVisible(false);
         Trainer.setVisible(false);
         TrainerCombobox.setVisible(false);
         TrainerIDTop.setVisible(false);
@@ -396,9 +444,8 @@ public class List extends javax.swing.JFrame {
     }
 
     private void showMembersSection() {
-        Trainer.setVisible(true);
-        TrainerCombobox.setVisible(true);
-        TrainerIDTop.setVisible(true);
+        memberInput.setVisible(true);
+        memberComboBox.setVisible(true);
         NameTop.setVisible(true);
         PhoneTop.setVisible(true);
         jSeparator1.setVisible(true);
@@ -413,10 +460,12 @@ public class List extends javax.swing.JFrame {
         jSeparator4.setVisible(true);
         TotalMembersAssigned.setVisible(true);
         Printbtn.setVisible(true);
-        loadTrainers();
+        loadMembers();
     }
 
     private void hideTrainersSection() {
+        memberInput.setVisible(false);
+        memberComboBox.setVisible(false);
         Trainer.setVisible(false);
         TrainerCombobox.setVisible(false);
         TrainerIDTop.setVisible(false);
@@ -438,14 +487,20 @@ public class List extends javax.swing.JFrame {
         Printbtn.setVisible(true);
         loadAllTrainers();
     }
-
+    private boolean loading = false;
     private void loadAllTrainers() {
+        loading = true;
         TrainerCombobox.removeAllItems();
         TrainerCombobox.addItem("Select a Trainer");
 
         if (StoreUsers.users == null || StoreUsers.users.isEmpty()) {
             TrainerCombobox.addItem("No trainers found");
             return;
+        }
+        for (Users u : StoreUsers.users) {
+            if (u instanceof Trainer t) {
+                TrainerCombobox.addItem(t.userID + " " + t.getName());
+            }
         }
         DefaultTableModel model = (DefaultTableModel) TrainerTable.getModel();
         model.setRowCount(0);
@@ -462,26 +517,20 @@ public class List extends javax.swing.JFrame {
                 });
             }
         }
+        loading = false;
     }
 
-    private void loadTrainers() {
-        TrainerCombobox.removeAllItems();
-        TrainerCombobox.addItem("Select a Trainer");
+     private void loadMembers() {
+        memberComboBox.removeAllItems();
+        memberComboBox.addItem("Select a Member");
 
-        if (StoreUsers.users == null || StoreUsers.users.isEmpty()) {
-            TrainerCombobox.addItem("No trainers found");
-            return;
-        }
-
-        ArrayList<Users> users = StoreUsers.users;
-
-        for (int i = 0; i < users.size(); i++) {
-            Users u = users.get(i);
-            if (u instanceof Trainer) {
-                TrainerCombobox.addItem(u.userID + " " + u.getName());
+        for (Users u : StoreUsers.users) {
+            if (u instanceof Member m) {
+                memberComboBox.addItem(m.userID + " " + m.getName());
             }
         }
     }
+     
 
     private void displayTrainerInfo(Trainer trainer) {
         // Section 1 of page (select trainer)
@@ -533,6 +582,7 @@ public class List extends javax.swing.JFrame {
      * @throws javax.swing.UnsupportedLookAndFeelException
      */
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
+        StoreUsers.loadStartupFile();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -575,6 +625,8 @@ public class List extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JComboBox<String> memberComboBox;
+    private javax.swing.JLabel memberInput;
     private javax.swing.JRadioButton memberRadio;
     // End of variables declaration//GEN-END:variables
 }
