@@ -4,7 +4,8 @@
  */
 package GUI;
 
-import Main.Member;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 /**
  *
@@ -677,56 +678,194 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMemberIDActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        
-        String firstName = txtFirstname.getText();
-        String surname = txtSurname.getText();
-        int MID = Integer.parseInt(txtMemberID.getText());
-        int Phone = Integer.parseInt(txtPhone.getText());
-        String address = txtAddress.getText(); // address the address
-        String dob = txtDob.getText();
-        String gender = genderRadioGroup.getSelection().getActionCommand();
-        
-        
-        String warningMessage = "";
-        
         boolean validated = checkInput(); //checks if the input is correct
         warningLabel.setVisible(!validated);
-        if(validated){
-        if(radioMember.isSelected()){ //ADDING MEMBER
-        if(radioStudent.isSelected()){ //Adding a student as a member of the gym
-            String course = txtCourse.getText();
-            String team = txtTeam.getText();
-            Main.Main.addUser(1, firstName, surname, Phone, address, dob, gender, course, team);
+        if(!validated){
+            return;
         }
-        if(radioStaff.isSelected()){ // Adding a tutor/polytechnic staff as a member of the gym
-            String course = txtCourse.getText();
-            String team = txtTeam.getText();
-            Main.Main.addUser(2, firstName, surname, Phone, address, dob, gender, course, team);
-        }}
-        
-        if(radioEmployee.isSelected()){// ADDING EMPLOYEE
-           if(btnYes.isSelected()){ //IS TRAINER // adding a trainer to the employees
-            String position = txtPosition.getText();
-            String department = txtDepartment.getText();
-            Main.Main.addUser(4, firstName, surname, Phone, address, dob, gender, position, department);
-            }else{//IS NOT TRAINER // general employee
-            String position = txtPosition.getText();
-            String department = txtDepartment.getText();
-            Main.Main.addUser(3, firstName, surname, Phone, address, dob, gender, position, department);
+
+        String firstName = txtFirstname.getText().trim();
+        String surname = txtSurname.getText().trim();
+        String address = txtAddress.getText().trim();
+        String dob = txtDob.getText().trim();
+        String gender = radioMale.isSelected() ? "Male" : "Female";
+
+        try {
+            if(radioMember.isSelected()){ //ADDING MEMBER
+                int phone = Integer.parseInt(txtPhone.getText().trim());
+                if(radioStudent.isSelected()){ //Adding a student as a member of the gym
+                    String course = txtCourse.getText().trim();
+                    String team = txtTeam.getText().trim();
+                    Main.Main.addUser(1, firstName, surname, phone, address, dob, gender, course, team);
+                } else if(radioStaff.isSelected()){ // Adding a tutor/polytechnic staff as a member of the gym
+                    String course = txtCourse.getText().trim();
+                    String team = txtTeam.getText().trim();
+                    Main.Main.addUser(2, firstName, surname, phone, address, dob, gender, course, team);
+                }
             }
-        }
-        
-        }else{
-        warningLabel.setText(warningMessage);
+
+            if(radioEmployee.isSelected()){// ADDING EMPLOYEE
+                int phone = Integer.parseInt(txtPhone.getText().trim());
+                String position = txtPosition.getText().trim();
+                String department = txtDepartment.getText().trim();
+                if(btnYes.isSelected()){ //IS TRAINER // adding a trainer to the employees
+                    Main.Main.addUser(4, firstName, surname, phone, address, dob, gender, position, department);
+                }else if(btnNo.isSelected()){ //IS NOT TRAINER // general employee
+                    Main.Main.addUser(3, firstName, surname, phone, address, dob, gender, position, department);
+                }
+            }
+        } catch (NumberFormatException ex) {
+            showWarning("ID, phone, and salary fields must contain valid numbers.");
         }
     
     }
         
         public boolean checkInput(){
-        
-        
-        return false;
+        if(!radioMember.isSelected() && !radioEmployee.isSelected()){
+            showWarning("Select whether you are adding a member or an employee.");
+            return false;
+        }
+
+        if(isBlank(txtFirstname.getText())){
+            showWarning("First name is required.");
+            return false;
+        }
+
+        if(isBlank(txtSurname.getText())){
+            showWarning("Surname is required.");
+            return false;
+        }
+
+        if(isBlank(txtPhone.getText())){
+            showWarning("Phone number is required.");
+            return false;
+        }
+
+        if(!isPositiveInteger(txtPhone.getText().trim())){
+            showWarning("Phone number must contain digits only.");
+            return false;
+        }
+
+        if(isBlank(txtAddress.getText()) || "Bld/Hs no, Road no, Block no".equals(txtAddress.getText().trim())){
+            showWarning("Address is required.");
+            return false;
+        }
+
+        if(radioMember.isSelected()){
+            if(isBlank(txtMemberID.getText())){
+                showWarning("Member ID is required.");
+                return false;
+            }
+
+            if(!isPositiveInteger(txtMemberID.getText().trim())){
+                showWarning("Member ID must be a whole number.");
+                return false;
+            }
+
+            if(isBlank(txtDob.getText()) || !isValidDate(txtDob.getText().trim())){
+                showWarning("DOB must be a valid date in dd/MM/yyyy format.");
+                return false;
+            }
+
+            if(genderRadioGroup.getSelection() == null){
+                showWarning("Select a gender.");
+                return false;
+            }
+
+            if(!radioStudent.isSelected() && !radioStaff.isSelected()){
+                showWarning("Select either Student or Staff.");
+                return false;
+            }
+
+            if(radioStudent.isSelected()){
+                if(isBlank(txtCourse.getText())){
+                    showWarning("Course is required for a student.");
+                    return false;
+                }
+                if(isBlank(txtTeam.getText())){
+                    showWarning("Team is required for a student.");
+                    return false;
+                }
+            }
+
+            if(radioStaff.isSelected()){
+                if(isBlank(txtPosition.getText())){
+                    showWarning("Position is required for staff.");
+                    return false;
+                }
+                if(isBlank(txtDepartment.getText())){
+                    showWarning("Department is required for staff.");
+                    return false;
+                }
+            }
+        }
+
+        if(radioEmployee.isSelected()){
+            if(isBlank(txtEmployeeID.getText())){
+                showWarning("Employee ID is required.");
+                return false;
+            }
+
+            if(!isPositiveInteger(txtEmployeeID.getText().trim())){
+                showWarning("Employee ID must be a whole number.");
+                return false;
+            }
+
+            if(isBlank(txtSalary.getText())){
+                showWarning("Salary is required.");
+                return false;
+            }
+
+            if(!isPositiveDecimal(txtSalary.getText().trim())){
+                showWarning("Salary must be a valid number.");
+                return false;
+            }
+
+            if(!btnYes.isSelected() && !btnNo.isSelected()){
+                showWarning("Select whether the employee is a trainer.");
+                return false;
+            }
+        }
+
+        warningLabel.setText("");
+        return true;
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void showWarning(String message) {
+        warningLabel.setText(message);
+        warningLabel.setVisible(true);
+    }
+
+    private boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
+
+    private boolean isPositiveInteger(String value) {
+        try {
+            return Integer.parseInt(value) > 0;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private boolean isPositiveDecimal(String value) {
+        try {
+            return Double.parseDouble(value) > 0;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+
+    private boolean isValidDate(String value) {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        format.setLenient(false);
+        try {
+            format.parse(value);
+            return true;
+        } catch (ParseException ex) {
+            return false;
+        }
+    }
 
     private void txtSalaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSalaryActionPerformed
         // TODO add your handling code here:
