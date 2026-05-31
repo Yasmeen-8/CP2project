@@ -1,10 +1,11 @@
 package Main;
+
 import java.util.*;
 import java.io.*;
 import java.io.Serializable;
 
 // Stores all users and handles saving/loading data
-public class StoreUsers implements Serializable{
+public class StoreUsers implements Serializable {
 
     // List that stores all users in the system
     public static ArrayList<Users> users = new ArrayList<>();
@@ -15,12 +16,12 @@ public class StoreUsers implements Serializable{
     }
 
     // Saves all user data to a file
-    public static void save(){
+    public static void save() {
         try {
 
-            ObjectOutputStream out =
-                new ObjectOutputStream(
-                new FileOutputStream("gymData.dat"));
+            ObjectOutputStream out
+                    = new ObjectOutputStream(
+                            new FileOutputStream("gymData.dat"));
 
             out.writeObject(users);
 
@@ -34,12 +35,12 @@ public class StoreUsers implements Serializable{
     }
 
     // Loads saved user data from a file
-    public static void load(){
+    public static void load() {
         try {
 
-            ObjectInputStream in =
-                new ObjectInputStream(
-                new FileInputStream("gymData.dat"));
+            ObjectInputStream in
+                    = new ObjectInputStream(
+                            new FileInputStream("gymData.dat"));
 
             users = (ArrayList<Users>) in.readObject();
 
@@ -57,12 +58,12 @@ public class StoreUsers implements Serializable{
 
         try {
 
-            Scanner file =
-                new Scanner(new File("startup.txt"));
+            Scanner file
+                    = new Scanner(new File("startup.txt"));
 
             // Read the number of employees in the file
-            int employeeCount =
-                Integer.parseInt(file.nextLine());
+            int employeeCount
+                    = Integer.parseInt(file.nextLine());
 
             for (int i = 0; i < employeeCount; i++) {
 
@@ -73,22 +74,20 @@ public class StoreUsers implements Serializable{
                 String lname = file.nextLine();
                 String address = file.nextLine();
                 String phone = file.nextLine();
-                double salary =
-                    Double.parseDouble(file.nextLine());
+                double salary
+                        = Double.parseDouble(file.nextLine());
 
                 // Create a regular employee
                 if (type.equals("E")) {
 
                     OtherEmp emp = new OtherEmp();
-
                     emp.setName(fname + " " + lname);
                     emp.setAddress(address);
                     emp.setPhoneNumber(Integer.parseInt(phone));
+                    emp.setSalary(salary);
 
                     users.add(emp);
-                }
-
-                // Create a personal trainer
+                } // Create a personal trainer
                 else if (type.equals("PT")) {
 
                     Trainer trainer = new Trainer();
@@ -96,12 +95,12 @@ public class StoreUsers implements Serializable{
                     trainer.setName(fname + " " + lname);
                     trainer.setAddress(address);
                     trainer.setPhoneNumber(Integer.parseInt(phone));
-
+                    trainer.setSalary(salary);
                     users.add(trainer);
 
                     // Read how many members belong to this trainer
-                    int memberCount =
-                        Integer.parseInt(file.nextLine());
+                    int memberCount
+                            = Integer.parseInt(file.nextLine());
 
                     for (int j = 0; j < memberCount; j++) {
 
@@ -123,6 +122,7 @@ public class StoreUsers implements Serializable{
                             m.setName(mf + " " + ml);
                             m.setAddress(ma);
                             m.setPhoneNumber(Integer.parseInt(mp));
+                            m.setDOB(dob);
 
                             m.position = file.nextLine();
                             m.department = file.nextLine();
@@ -140,6 +140,7 @@ public class StoreUsers implements Serializable{
                             m.setName(mf + " " + ml);
                             m.setAddress(ma);
                             m.setPhoneNumber(Integer.parseInt(mp));
+                            m.setDOB(dob);
 
                             m.course = file.nextLine();
                             m.Teams = file.nextLine();
