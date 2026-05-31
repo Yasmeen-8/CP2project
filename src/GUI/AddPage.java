@@ -9,7 +9,8 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author Claire's pc
+ * @author Zaherah
+ * Purpose/description 
  */
 public class AddPage extends javax.swing.JFrame {
     

@@ -7,6 +7,7 @@ package GUI;
 /**
  *
  * @author Zaherah
+ * Purpose/description: to give a start page where the user can access all the pages within it
  */
 public class HomePage extends javax.swing.JFrame {
     
@@ -121,36 +122,49 @@ public class HomePage extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         System.exit(2);
+        //setting an exit mechanism to close the page, 2 for smoother exit
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportActionPerformed
         MarketingReport report = new MarketingReport();
         report.setVisible(true);
+        
+        //connecting the MarketingReport page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnReportActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         AddPage add = new AddPage();
         add.setVisible(true);
+        
+        //connecting the AddPage page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainerActionPerformed
         TrainerManage manage = new TrainerManage();
         manage.setVisible(true);
+        
+        //connecting the TrainerManage page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnTrainerActionPerformed
 
     private void btnListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListActionPerformed
         List list = new List();
         list.setVisible(true);
+        
+        //connecting the List page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnListActionPerformed
 
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         Remove remove = new Remove();
         remove.setVisible(true);
+        
+        //connecting the Remove page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnRemoveActionPerformed
 
     private void btnAlterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterActionPerformed
         Alter alter = new Alter();
         alter.setVisible(true);
+        
+        //connecting the Alter page to the home page and setting it to appear visible
     }//GEN-LAST:event_btnAlterActionPerformed
 
     /**
