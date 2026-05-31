@@ -12,7 +12,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author HP
+ * @author marwa
+ * Purpose/Description: Manages trainer to member relationship, and allows members to be assigned or removed to trainers
  */
 public class TrainerManage extends javax.swing.JFrame {
 
@@ -194,7 +195,7 @@ public class TrainerManage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Trainer combo box displays list of trainers 
     private void TrainerComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerComboboxActionPerformed
         String trainerSelected = (String) TrainerCombobox.getSelectedItem();
         if (trainerSelected == null || trainerSelected.equals("Select a Trainer") || trainerSelected.equals("No trainers found")) {
@@ -216,7 +217,7 @@ public class TrainerManage extends javax.swing.JFrame {
     private void MemberComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MemberComboboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MemberComboboxActionPerformed
-
+//Removes members, checks if the trainer and member selected is valid and existing first
     private void RemoveMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveMemberBtnActionPerformed
         String trainerSelected = (String) TrainerCombobox.getSelectedItem();
 
@@ -284,7 +285,7 @@ public class TrainerManage extends javax.swing.JFrame {
             loadUnassignedMembers();
         }
     }//GEN-LAST:event_RemoveMemberBtnActionPerformed
-
+//Assigns members to trainers if valid and exsiting, makes sure to not allow re-assigning already existing assigned members.
     private void AssignMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AssignMemberBtnActionPerformed
         String trainerSelected = (String) TrainerCombobox.getSelectedItem();
         String memberSelected = (String) MemberCombobox.getSelectedItem();
@@ -322,6 +323,13 @@ public class TrainerManage extends javax.swing.JFrame {
             return;
         }
 
+        for (Member m : selectedTrainer.getAssignedMembers()) {
+            if (m.userID == selectedMember.userID) {
+                javax.swing.JOptionPane.showMessageDialog(this, "This member is already assigned to this trainer.");
+                return;
+            }
+        }
+        
         selectedTrainer.getAssignedMembers().add(selectedMember);
         StoreUsers.save();
 
@@ -329,7 +337,8 @@ public class TrainerManage extends javax.swing.JFrame {
         loadAssignedMembers(selectedTrainer);
         loadUnassignedMembers();
     }//GEN-LAST:event_AssignMemberBtnActionPerformed
-
+//Loads trainers and members, whether assigned or unassigned onto combo boxes or tables
+    
     private void loadTrainers() {
         TrainerCombobox.removeAllItems();
         TrainerCombobox.addItem("Select a Trainer");
@@ -345,7 +354,7 @@ public class TrainerManage extends javax.swing.JFrame {
             }
         }
     }
-    
+
     private void loadMembers() {
         MemberCombobox.removeAllItems();
         MemberCombobox.addItem("Select a Member to assign");
@@ -398,7 +407,6 @@ public class TrainerManage extends javax.swing.JFrame {
     private void loadAssignedMembers(Trainer trainer) {
         DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
         model.setRowCount(0);
-  
 
         ArrayList<Member> members = trainer.getAssignedMembers();
 
