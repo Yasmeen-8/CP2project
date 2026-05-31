@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author marwa
+ * Purpose/Description: To display the list of member and trainer information 
  */
 public class List extends javax.swing.JFrame {
 
@@ -337,7 +338,7 @@ public class List extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Handles event of print button clicked, print members if members are found, if not it displays error dialogues
     private void PrintbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintbtnActionPerformed
         String selected = (String) TrainerCombobox.getSelectedItem();
 
@@ -352,7 +353,7 @@ public class List extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Printing the list has failed: " + ex.getMessage());
         }
     }//GEN-LAST:event_PrintbtnActionPerformed
-
+//Combo box for trainer loads trainers and displays them
     private void TrainerComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerComboboxActionPerformed
         if (loading) {
             return;
@@ -388,7 +389,7 @@ public class List extends javax.swing.JFrame {
             showMembersSection();
         }
     }//GEN-LAST:event_memberRadioActionPerformed
-
+//Member combo box loads members, and assigned members assigned to trainers.
     private void memberComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberComboBoxActionPerformed
         String selected = (String) memberComboBox.getSelectedItem();
         if (selected == null || selected.equals("Select a Member")) {
@@ -420,7 +421,7 @@ public class List extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_memberComboBoxActionPerformed
-
+//Controls what to display depending on whether member or trainer is picked
     private void hideMembersSection() {
         memberInput.setVisible(false);
         memberComboBox.setVisible(false);
@@ -487,6 +488,7 @@ public class List extends javax.swing.JFrame {
         Printbtn.setVisible(true);
         loadAllTrainers();
     }
+    //Loads all the trainers
     private boolean loading = false;
     private void loadAllTrainers() {
         loading = true;
@@ -519,7 +521,7 @@ public class List extends javax.swing.JFrame {
         }
         loading = false;
     }
-
+//Loads all members
      private void loadMembers() {
         memberComboBox.removeAllItems();
         memberComboBox.addItem("Select a Member");
@@ -543,7 +545,7 @@ public class List extends javax.swing.JFrame {
         NameAssigned.setText("Name : " + trainer.getName());
         PhoneAssigned.setText("Phone : " + trainer.getPhoneNumber());
     }
-
+//Method to load members assigned to a trainer
     private void loadAssignedMembers(Trainer trainer) {
         DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
         model.setRowCount(0);
