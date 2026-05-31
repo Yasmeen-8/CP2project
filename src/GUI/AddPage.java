@@ -720,39 +720,39 @@ public class AddPage extends javax.swing.JFrame {
     
     }
         
-        public boolean checkInput(){
+        public boolean checkInput(){// VALIDATES THE INPUT FOR EVERYTHING IN THE ADD PAGE
             
-        if(!radioMember.isSelected() && !radioEmployee.isSelected()){
+        if(!radioMember.isSelected() && !radioEmployee.isSelected()){ //shows warning for both sides
             showWarning("Select whether you are adding a member or an employee.");
             return false;
         }
 
-        if(isBlank(txtFirstname.getText())){
+        if(isBlank(txtFirstname.getText())){ // checks the first name label and shows wa
             showWarning("First name is required.");
             return false;
         }
 
-        if(isBlank(txtSurname.getText())){
+        if(isBlank(txtSurname.getText())){ //Checks if the surname is empty
             showWarning("Surname is required.");
             return false;
         }
 
-        if(isBlank(txtPhone.getText())){
+        if(isBlank(txtPhone.getText())){ // checks if the phone is empty 
             showWarning("Phone number is required.");
             return false;
         }
 
-        if(!isPositiveInteger(txtPhone.getText().trim())){
+        if(!isPositiveInteger(txtPhone.getText().trim())){ // checks if the input in phone is a positive number (integer in this case)
             showWarning("Phone number must contain digits only.");
             return false;
         }
 
-        if(isBlank(txtAddress.getText()) || "Bld/Hs no, Road no, Block no".equals(txtAddress.getText().trim())){
+        if(isBlank(txtAddress.getText()) || "Bld/Hs no, Road no, Block no".equals(txtAddress.getText().trim())){ // 
             showWarning("Address is required.");
             return false;
         }
 
-        if(radioMember.isSelected()){
+        if(radioMember.isSelected()){ //shows the warnings for the members side 
             if(isBlank(txtMemberID.getText())){
                 showWarning("Member ID is required.");
                 return false;
@@ -799,7 +799,7 @@ public class AddPage extends javax.swing.JFrame {
             }
         }
 
-        if(radioEmployee.isSelected()){
+        if(radioEmployee.isSelected()){// shows warnings for the employee side
             if(isBlank(txtEmployeeID.getText())){
                 showWarning("Employee ID is required.");
                 return false;
@@ -830,16 +830,16 @@ public class AddPage extends javax.swing.JFrame {
         return true;
     }//GEN-LAST:event_btnSaveActionPerformed
 
-    private void showWarning(String message) {
+    private void showWarning(String message) {// this makes the ui show the warning message
         warningLabel.setText(message);
         warningLabel.setVisible(true);
     }
 
-    private boolean isBlank(String value) {
+    private boolean isBlank(String value) { //checks if a space is empty
         return value == null || value.trim().isEmpty();
     }
 
-    private boolean isPositiveInteger(String value) {
+    private boolean isPositiveInteger(String value) { //makes sure the integer is positive
         try {
             return Integer.parseInt(value) > 0;
         } catch (NumberFormatException ex) {
@@ -847,7 +847,7 @@ public class AddPage extends javax.swing.JFrame {
         }
     }
 
-    private boolean isPositiveDecimal(String value) {
+    private boolean isPositiveDecimal(String value) { // same thing but makes sure a decimal is positive in this case
         try {
             return Double.parseDouble(value) > 0;
         } catch (NumberFormatException ex) {
