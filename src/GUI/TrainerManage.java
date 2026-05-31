@@ -64,6 +64,7 @@ public class TrainerManage extends javax.swing.JFrame {
         MemberCombobox = new javax.swing.JComboBox<>();
         TrainerCombobox = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +121,11 @@ public class TrainerManage extends javax.swing.JFrame {
 
         TrainerCombobox.addActionListener(this::TrainerComboboxActionPerformed);
 
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+
         javax.swing.GroupLayout TrainerManagePanelLayout = new javax.swing.GroupLayout(TrainerManagePanel);
         TrainerManagePanel.setLayout(TrainerManagePanelLayout);
         TrainerManagePanelLayout.setHorizontalGroup(
@@ -146,17 +152,21 @@ public class TrainerManage extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
-                        .addComponent(AssignMemberBtn)
-                        .addGap(54, 54, 54))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
                         .addComponent(RemoveMemberBtn)
-                        .addGap(55, 55, 55))))
+                        .addGap(55, 55, 55))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TrainerManagePanelLayout.createSequentialGroup()
+                        .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(AssignMemberBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(54, 54, 54))))
         );
         TrainerManagePanelLayout.setVerticalGroup(
             TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TrainerManagePanelLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(SelectTrainer)
+                .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SelectTrainer)
+                    .addComponent(btnBack))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(TrainerManagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Trainerinput)
@@ -337,6 +347,12 @@ public class TrainerManage extends javax.swing.JFrame {
         loadAssignedMembers(selectedTrainer);
         loadUnassignedMembers();
     }//GEN-LAST:event_AssignMemberBtnActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
 //Loads trainers and members, whether assigned or unassigned onto combo boxes or tables
     
     private void loadTrainers() {
@@ -448,6 +464,7 @@ public class TrainerManage extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> TrainerCombobox;
     private javax.swing.JPanel TrainerManagePanel;
     private javax.swing.JLabel Trainerinput;
+    private javax.swing.JButton btnBack;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

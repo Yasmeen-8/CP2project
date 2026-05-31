@@ -181,7 +181,9 @@ public class MarketingReport extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPreviewActionPerformed
 // Closes the current window
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        dispose();
+        this.dispose();
+        
+        //to close the page without exiting the whole program
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void rbAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbAllActionPerformed

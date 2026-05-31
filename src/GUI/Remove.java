@@ -72,6 +72,7 @@ public class Remove extends javax.swing.JFrame {
         IDinput = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,6 +157,11 @@ public class Remove extends javax.swing.JFrame {
         IDinput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         IDinput.addActionListener(this::IDinputActionPerformed);
 
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -213,6 +219,8 @@ public class Remove extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Removebtn)
                 .addGap(127, 127, 127))
         );
@@ -264,7 +272,9 @@ public class Remove extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(removeMemberBtn)
                 .addGap(18, 18, 18)
-                .addComponent(Removebtn)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Removebtn)
+                    .addComponent(btnBack))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
@@ -576,6 +586,12 @@ public class Remove extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_memberRadioActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -605,6 +621,7 @@ public class Remove extends javax.swing.JFrame {
     private javax.swing.JLabel Surname;
     private javax.swing.JLabel Trainer;
     private javax.swing.JLabel TrainerID;
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton employeeRadio;
     private javax.swing.JLabel firstNameLbl;

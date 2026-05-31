@@ -81,6 +81,7 @@ public class Alter extends javax.swing.JFrame {
         DOBDisplay = new javax.swing.JLabel();
         DOBAlter = new javax.swing.JLabel();
         DOBInput = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -209,6 +210,12 @@ public class Alter extends javax.swing.JFrame {
         DOBAlter.setText("DOB :");
         jPanel2.add(DOBAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 673, 62, -1));
         jPanel2.add(DOBInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 671, 247, 35));
+
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 367, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -539,6 +546,12 @@ public class Alter extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_savebtnActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -569,6 +582,7 @@ public class Alter extends javax.swing.JFrame {
     private javax.swing.JLabel addressAlter;
     private javax.swing.JLabel addressDisplay;
     private javax.swing.JTextField addressInput;
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
