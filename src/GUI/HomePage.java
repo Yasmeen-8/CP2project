@@ -6,7 +6,7 @@ package GUI;
 
 /**
  *
- * @author Claire's pc
+ * @author Zaherah
  */
 public class HomePage extends javax.swing.JFrame {
     
