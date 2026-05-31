@@ -13,7 +13,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author marwa
  * Purpose/Description: To allow the user to alter personal information, for both employee and member.
  */
-public class Alter extends javax.swing.JFrame {
+public class Alter extends javax.swing.JFrame {// check
 
     private Employee currentEmployee = null;
     private Member currentMember = null;
