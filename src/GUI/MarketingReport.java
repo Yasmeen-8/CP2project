@@ -22,6 +22,7 @@ public class MarketingReport extends javax.swing.JFrame {
     /**
      * Creates new form MarketingReport
      */
+    // Creates and displays the GUI components
     public MarketingReport() {
         initComponents();
     }
@@ -158,10 +159,13 @@ public class MarketingReport extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Generates and displays the selected report in the text area
     private void btnPreviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviewActionPerformed
+    // Default report type
         String type = "all";
 
-    if(rbStaff.isSelected()) {
+    // Check which radio button is selected
+        if(rbStaff.isSelected()) {
         type = "staff";
     }
 
@@ -169,11 +173,12 @@ public class MarketingReport extends javax.swing.JFrame {
         type = "students";
     }
 
-    String report = Main.generateMarketingReport(type);
+    // Generate report and display it
+        String report = Main.generateMarketingReport(type);
 
     txtPreview.setText(report);
     }//GEN-LAST:event_btnPreviewActionPerformed
-
+// Closes the current window
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
@@ -185,17 +190,20 @@ public class MarketingReport extends javax.swing.JFrame {
     private void rbStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbStaffActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbStaffActionPerformed
-
+// Saves the report shown in the text area to marketingReport.txt
     private void downloadBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downloadBtnActionPerformed
         try {
 
+        // Create output file
         PrintWriter writer =
         new PrintWriter("marketingReport.txt");
 
+        // Write report contents
         writer.print(txtPreview.getText());
 
         writer.close();
 
+        // Success message
         JOptionPane.showMessageDialog(this,
         "Report downloaded successfully!");
 
@@ -203,19 +211,24 @@ public class MarketingReport extends javax.swing.JFrame {
 
     catch(Exception e) {
 
+        // Error message
         JOptionPane.showMessageDialog(this,
         "Error saving report.");
     }
     }//GEN-LAST:event_downloadBtnActionPerformed
 
+    // Reads the contents of marketingReport.txt
     public String readReportFile() {
 
+    // Stores file contents
     String text = "";
 
     try {
+        // Open report file
         Scanner file =
         new Scanner(new File("marketingReport.txt"));
 
+        // Read file line by line
         while(file.hasNextLine()) {
             text += file.nextLine() + "\n";
         }
@@ -223,9 +236,11 @@ public class MarketingReport extends javax.swing.JFrame {
         file.close();
 
     } catch(FileNotFoundException e) {
+        // File not found message
         text = "Report not found.";
     }
 
+    // Return report contents
     return text;
 }
     
@@ -234,6 +249,7 @@ public class MarketingReport extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
+        // Load initial data from startup file
         StoreUsers.loadStartupFile();
 
         /* Set the Nimbus look and feel */

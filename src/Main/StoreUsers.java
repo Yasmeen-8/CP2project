@@ -3,19 +3,20 @@ import java.util.*;
 import java.io.*;
 import java.io.Serializable;
 
-// We will add a method that is called for every update (also for when any alter is done called "save" and we will have the save / load in the place)
+// Stores all users and handles saving/loading data
 public class StoreUsers implements Serializable{
-    
+
+    // List that stores all users in the system
     public static ArrayList<Users> users = new ArrayList<>();
 
-  
+    // Returns the list of users
     public ArrayList<Users> getUsers() {
         return users;
     }
-    
-    
+
+    // Saves all user data to a file
     public static void save(){
-    try {
+        try {
 
             ObjectOutputStream out =
                 new ObjectOutputStream(
@@ -31,9 +32,10 @@ public class StoreUsers implements Serializable{
             System.out.println("Save error: " + e.getMessage());
         }
     }
-    
+
+    // Loads saved user data from a file
     public static void load(){
-    try {
+        try {
 
             ObjectInputStream in =
                 new ObjectInputStream(
@@ -49,7 +51,8 @@ public class StoreUsers implements Serializable{
             System.out.println("No saved data found.");
         }
     }
-    
+
+    // Loads the initial data from startup.txt
     public static void loadStartupFile() {
 
         try {
@@ -57,11 +60,13 @@ public class StoreUsers implements Serializable{
             Scanner file =
                 new Scanner(new File("startup.txt"));
 
+            // Read the number of employees in the file
             int employeeCount =
                 Integer.parseInt(file.nextLine());
 
             for (int i = 0; i < employeeCount; i++) {
 
+                // Read employee type (E or PT)
                 String type = file.nextLine();
 
                 String fname = file.nextLine();
@@ -71,9 +76,11 @@ public class StoreUsers implements Serializable{
                 double salary =
                     Double.parseDouble(file.nextLine());
 
+                // Create a regular employee
                 if (type.equals("E")) {
 
                     OtherEmp emp = new OtherEmp();
+
                     emp.setName(fname + " " + lname);
                     emp.setAddress(address);
                     emp.setPhoneNumber(Integer.parseInt(phone));
@@ -81,20 +88,24 @@ public class StoreUsers implements Serializable{
                     users.add(emp);
                 }
 
+                // Create a personal trainer
                 else if (type.equals("PT")) {
 
                     Trainer trainer = new Trainer();
+
                     trainer.setName(fname + " " + lname);
                     trainer.setAddress(address);
                     trainer.setPhoneNumber(Integer.parseInt(phone));
 
                     users.add(trainer);
 
+                    // Read how many members belong to this trainer
                     int memberCount =
                         Integer.parseInt(file.nextLine());
 
                     for (int j = 0; j < memberCount; j++) {
 
+                        // Read member information
                         String memberType = file.nextLine();
 
                         String mf = file.nextLine();
@@ -104,9 +115,11 @@ public class StoreUsers implements Serializable{
                         String mp = file.nextLine();
                         String gender = file.nextLine();
 
+                        // Create a staff member
                         if (memberType.equals("staff")) {
 
                             PolyStaff m = new PolyStaff();
+
                             m.setName(mf + " " + ml);
                             m.setAddress(ma);
                             m.setPhoneNumber(Integer.parseInt(mp));
@@ -115,11 +128,15 @@ public class StoreUsers implements Serializable{
                             m.department = file.nextLine();
 
                             users.add(m);
+
+                            // Assign member to trainer
                             trainer.assignMember(m);
 
                         } else {
 
+                            // Create a student member
                             PolyStudent m = new PolyStudent();
+
                             m.setName(mf + " " + ml);
                             m.setAddress(ma);
                             m.setPhoneNumber(Integer.parseInt(mp));
@@ -128,6 +145,8 @@ public class StoreUsers implements Serializable{
                             m.Teams = file.nextLine();
 
                             users.add(m);
+
+                            // Assign member to trainer
                             trainer.assignMember(m);
                         }
                     }
@@ -142,5 +161,4 @@ public class StoreUsers implements Serializable{
             System.out.println("Startup load error.");
         }
     }
-    
 }
