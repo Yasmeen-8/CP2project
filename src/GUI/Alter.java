@@ -10,8 +10,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author marwa
- * Purpose/Description: To allow the user to alter personal information, for both employee and member.
+ * @author marwa Purpose/Description: To allow the user to alter personal
+ * information, for both employee and member.
  */
 public class Alter extends javax.swing.JFrame {// check
 
@@ -86,136 +86,270 @@ public class Alter extends javax.swing.JFrame {// check
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(214, 217, 223));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         role.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         role.setForeground(new java.awt.Color(0, 0, 153));
         role.setText("Role :");
-        jPanel2.add(role, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 110, 109, -1));
 
         trainer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         trainer.setForeground(new java.awt.Color(0, 0, 153));
         trainer.setText("Trainer :");
-        jPanel2.add(trainer, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 110, -1, -1));
 
         fnDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         fnDisplay.setForeground(new java.awt.Color(0, 0, 153));
         fnDisplay.setText("First name :");
-        jPanel2.add(fnDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 169, 109, -1));
 
         snDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         snDisplay.setForeground(new java.awt.Color(0, 0, 153));
         snDisplay.setText("Surname :");
-        jPanel2.add(snDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 200, -1, -1));
 
         addressDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         addressDisplay.setForeground(new java.awt.Color(0, 0, 153));
         addressDisplay.setText("Address :");
-        jPanel2.add(addressDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 231, -1, -1));
 
         phoneAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         phoneAlter.setForeground(new java.awt.Color(0, 0, 153));
         phoneAlter.setText("Phone no :");
-        jPanel2.add(phoneAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 570, 109, -1));
 
         salaryAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         salaryAlter.setForeground(new java.awt.Color(0, 0, 153));
         salaryAlter.setText("Salary :");
-        jPanel2.add(salaryAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 621, -1, -1));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 147, 554, 10));
 
         editbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         editbtn.setForeground(new java.awt.Color(0, 0, 153));
         editbtn.setText("EDIT");
         editbtn.addActionListener(this::editbtnActionPerformed);
-        jPanel2.add(editbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 367, -1, -1));
 
         searchID.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         searchID.setForeground(new java.awt.Color(0, 0, 153));
         searchID.setText("Search ID :");
-        jPanel2.add(searchID, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 67, -1, -1));
 
         IDinput.addActionListener(this::IDinputActionPerformed);
-        jPanel2.add(IDinput, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 67, 151, 31));
 
         fnAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         fnAlter.setForeground(new java.awt.Color(0, 0, 153));
         fnAlter.setText("First name :");
-        jPanel2.add(fnAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 434, -1, -1));
-        jPanel2.add(fnInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 433, 128, 33));
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 411, 554, 16));
 
         snAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         snAlter.setForeground(new java.awt.Color(0, 0, 153));
         snAlter.setText("Surname :");
-        jPanel2.add(snAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 479, -1, -1));
-        jPanel2.add(salaryInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 619, 128, 34));
-        jPanel2.add(phoneInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 569, 205, 32));
 
         addressAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         addressAlter.setForeground(new java.awt.Color(0, 0, 153));
         addressAlter.setText("Address :");
-        jPanel2.add(addressAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 525, -1, -1));
 
         phoneDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         phoneDisplay.setForeground(new java.awt.Color(0, 0, 153));
         phoneDisplay.setText("Phone no :");
-        jPanel2.add(phoneDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 268, -1, -1));
 
         salaryDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         salaryDisplay.setForeground(new java.awt.Color(0, 0, 153));
         salaryDisplay.setText("Salary :");
-        jPanel2.add(salaryDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 299, 77, -1));
 
         SelectType.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         SelectType.setForeground(new java.awt.Color(0, 0, 153));
         SelectType.setText("Select type to alter :");
-        jPanel2.add(SelectType, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 22, -1, -1));
-        jPanel2.add(addressInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 523, 304, 34));
-        jPanel2.add(snInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 478, 144, 33));
 
         empRadio.setBackground(new java.awt.Color(214, 217, 223));
         empRadio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         empRadio.setForeground(new java.awt.Color(0, 0, 153));
         empRadio.setText("Employee");
         empRadio.addActionListener(this::empRadioActionPerformed);
-        jPanel2.add(empRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 24, -1, -1));
 
         memberRadio.setBackground(new java.awt.Color(214, 217, 223));
         memberRadio.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         memberRadio.setForeground(new java.awt.Color(0, 0, 153));
         memberRadio.setText("Member");
         memberRadio.addActionListener(this::memberRadioActionPerformed);
-        jPanel2.add(memberRadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 24, -1, -1));
 
         cancelbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cancelbtn.setForeground(new java.awt.Color(0, 0, 153));
         cancelbtn.setText("Cancel");
         cancelbtn.addActionListener(this::cancelbtnActionPerformed);
-        jPanel2.add(cancelbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 778, -1, -1));
 
         savebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         savebtn.setForeground(new java.awt.Color(0, 0, 153));
         savebtn.setText("SAVE");
         savebtn.addActionListener(this::savebtnActionPerformed);
-        jPanel2.add(savebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 778, -1, -1));
 
         DOBDisplay.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         DOBDisplay.setForeground(new java.awt.Color(0, 0, 153));
         DOBDisplay.setText("DOB :");
-        jPanel2.add(DOBDisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 336, -1, -1));
 
         DOBAlter.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         DOBAlter.setForeground(new java.awt.Color(0, 0, 153));
         DOBAlter.setText("DOB :");
-        jPanel2.add(DOBAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 673, 62, -1));
-        jPanel2.add(DOBInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 671, 247, 35));
 
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnBack.setForeground(new java.awt.Color(0, 0, 153));
         btnBack.setText("Back");
         btnBack.addActionListener(this::btnBackActionPerformed);
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 367, -1, -1));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(SelectType)
+                .addGap(18, 18, 18)
+                .addComponent(empRadio)
+                .addGap(18, 18, 18)
+                .addComponent(memberRadio))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(350, 350, 350)
+                .addComponent(btnBack)
+                .addGap(12, 12, 12)
+                .addComponent(editbtn))
+            .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(fnAlter)
+                .addGap(28, 28, 28)
+                .addComponent(fnInput, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(snAlter)
+                .addGap(41, 41, 41)
+                .addComponent(snInput, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(addressAlter)
+                .addGap(49, 49, 49)
+                .addComponent(addressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(phoneAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(phoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(salaryAlter)
+                .addGap(67, 67, 67)
+                .addComponent(salaryInput, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(DOBAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
+                .addComponent(DOBInput, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(280, 280, 280)
+                .addComponent(cancelbtn)
+                .addGap(69, 69, 69)
+                .addComponent(savebtn))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(fnDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(snDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(addressDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(phoneDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(salaryDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(DOBDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(role, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(trainer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(searchID)
+                        .addGap(98, 98, 98)
+                        .addComponent(IDinput, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SelectType)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(empRadio)
+                            .addComponent(memberRadio))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(searchID)
+                    .addComponent(IDinput, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(role)
+                    .addComponent(trainer))
+                .addGap(12, 12, 12)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(fnDisplay)
+                .addGap(6, 6, 6)
+                .addComponent(snDisplay)
+                .addGap(6, 6, 6)
+                .addComponent(addressDisplay)
+                .addGap(12, 12, 12)
+                .addComponent(phoneDisplay)
+                .addGap(6, 6, 6)
+                .addComponent(salaryDisplay)
+                .addGap(12, 12, 12)
+                .addComponent(DOBDisplay)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBack)
+                    .addComponent(editbtn))
+                .addGap(12, 12, 12)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(fnAlter))
+                    .addComponent(fnInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(snAlter))
+                    .addComponent(snInput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(addressAlter))
+                    .addComponent(addressInput, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(phoneAlter))
+                    .addComponent(phoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(salaryAlter))
+                    .addComponent(salaryInput, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(DOBAlter))
+                    .addComponent(DOBInput, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(72, 72, 72)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cancelbtn)
+                    .addComponent(savebtn)))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,6 +429,7 @@ public class Alter extends javax.swing.JFrame {// check
         }
     }
 //Controls what variables are displayed and what aren't
+
     private void hideAllDisplaySection() {
         role.setVisible(false);
         trainer.setVisible(false);
@@ -395,7 +530,6 @@ public class Alter extends javax.swing.JFrame {// check
     }
 
     //Displays information for either employee or member when an ID is entered
-    
     private void searchEmployee() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -484,10 +618,14 @@ public class Alter extends javax.swing.JFrame {// check
             hideEditSection();
             return;
         }
+        String fullName = currentMember.getName().trim();
+        int separator = fullName.indexOf(" ");
+        String fN = separator != -1 ? fullName.substring(0, separator) : fullName;
+        String sN = separator != -1 ? fullName.substring(separator + 1) : "";
 
         role.setText("Role :  Member");
-        fnDisplay.setText("First name :  " + currentMember.getName());
-        snDisplay.setText("Surname :  ");
+        fnDisplay.setText("First name :  " + fN);
+        snDisplay.setText("Surname :  " + sN);
         addressDisplay.setText("Address :  " + currentMember.getAddress());
         phoneDisplay.setText("Phone no :  " + currentMember.getPhoneNumber());
         DOBDisplay.setText("DOB :  " + currentMember.getDOB());
@@ -548,7 +686,7 @@ public class Alter extends javax.swing.JFrame {// check
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         this.dispose();
-        
+
         //to close the page without exiting the whole program
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -557,13 +695,12 @@ public class Alter extends javax.swing.JFrame {// check
      */
     public static void main(String args[]) {
         StoreUsers.loadStartupFile();
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-
         try {
             UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
