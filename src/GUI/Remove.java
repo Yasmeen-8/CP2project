@@ -11,7 +11,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author HP
+ * @author marwa
+ * Purpose/Description: Removes members and employees, and members assigned to employee being removed
  */
 public class Remove extends javax.swing.JFrame {
 
@@ -282,7 +283,7 @@ public class Remove extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Remove member button is handled by checking if current employee is empty, or if its not a trainer, or if members arent assigned to the trainer
     private void removeMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMemberBtnActionPerformed
         if (currentEmployee == null) {
             javax.swing.JOptionPane.showMessageDialog(this, "Please search for a trainer first.");
@@ -309,7 +310,7 @@ public class Remove extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Members removed successfully!");
         }
     }//GEN-LAST:event_removeMemberBtnActionPerformed
-
+//Remove button ensures first a employee/member is selected, if it is the employee/member is removed after confirmation pop up
     private void RemovebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovebtnActionPerformed
         if (memberRadio.isSelected()) {
             if (currentMember == null) {
@@ -374,7 +375,7 @@ public class Remove extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Please select a type first (Trainer or Member).");
         }
     }//GEN-LAST:event_RemovebtnActionPerformed
-
+//Depending on radio button choice, we search for the corresponding employee or member.
     private void IDinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDinputActionPerformed
         if (employeeRadio.isSelected()) {
             searchEmployee();
@@ -382,7 +383,7 @@ public class Remove extends javax.swing.JFrame {
             searchMember();
         }
     }//GEN-LAST:event_IDinputActionPerformed
-
+//Method for searching the employee entered and ensuring it is valid and not empty
     private void searchEmployee() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -432,7 +433,7 @@ public class Remove extends javax.swing.JFrame {
             ((DefaultTableModel) Memberslist.getModel()).setRowCount(0);
         }
     }
-
+//Searches for member method, and ensures its valid and not empty 
     private void searchMember() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -479,7 +480,7 @@ public class Remove extends javax.swing.JFrame {
             TrainerID.setText("Trainer ID : No ID found");
         }
     }
-
+//Controls what to display and what not to, depending on radio button choice.
     private void hideEmployeeSection() {
         SearchID.setVisible(false);
         IDinput.setVisible(false);
