@@ -10,7 +10,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author HP
+ * @author marwa
+ * Purpose/Description: To allow the user to alter personal information, for both employee and member.
  */
 public class Alter extends javax.swing.JFrame {
 
@@ -225,7 +226,7 @@ public class Alter extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+//This part is responsible for handling the display, depending if employee or member is chosen
     private void empRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRadioActionPerformed
         if (empRadio.isSelected()) {
             hideEditSection();
@@ -245,7 +246,7 @@ public class Alter extends javax.swing.JFrame {
             this.pack();
         }
     }//GEN-LAST:event_memberRadioActionPerformed
-
+    //Upon clicking edit button, it checks if the textbox for search ID is empty or invalid, and if not it displays info to alter.
     private void editbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbtnActionPerformed
         String id = IDinput.getText().trim();
 
@@ -286,7 +287,7 @@ public class Alter extends javax.swing.JFrame {
             searchMember();
         }
     }
-
+//Controls what variables are displayed and what aren't
     private void hideAllDisplaySection() {
         role.setVisible(false);
         trainer.setVisible(false);
@@ -386,6 +387,8 @@ public class Alter extends javax.swing.JFrame {
         cancelbtn.setVisible(true);
     }
 
+    //Displays information for either employee or member when an ID is entered
+    
     private void searchEmployee() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -483,12 +486,12 @@ public class Alter extends javax.swing.JFrame {
         DOBDisplay.setText("DOB :  " + currentMember.getDOB());
         hideEditSection();
     }//GEN-LAST:event_IDinputActionPerformed
-
+//Hides the section shown for altering 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
         hideEditSection();
         this.pack();
     }//GEN-LAST:event_cancelbtnActionPerformed
-
+//Saves the altered information user entered
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         if (empRadio.isSelected()) {
             if (fnInput.getText().trim().isEmpty()
