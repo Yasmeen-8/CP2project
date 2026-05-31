@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 /**
  *
  * @author zahra
+ * Purpose/description: this page is for the user to generate a marketing report
  */
 public class MarketingReport extends javax.swing.JFrame {
     
