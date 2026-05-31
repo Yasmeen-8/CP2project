@@ -11,7 +11,8 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author HP
+ * @author marwa
+ * Purpose/Description: Removes members and employees, and members assigned to employee being removed
  */
 public class Remove extends javax.swing.JFrame {
 
@@ -71,6 +72,7 @@ public class Remove extends javax.swing.JFrame {
         IDinput = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -155,6 +157,11 @@ public class Remove extends javax.swing.JFrame {
         IDinput.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         IDinput.addActionListener(this::IDinputActionPerformed);
 
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -212,6 +219,8 @@ public class Remove extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Removebtn)
                 .addGap(127, 127, 127))
         );
@@ -263,7 +272,9 @@ public class Remove extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(removeMemberBtn)
                 .addGap(18, 18, 18)
-                .addComponent(Removebtn)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Removebtn)
+                    .addComponent(btnBack))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
 
@@ -282,7 +293,7 @@ public class Remove extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Remove member button is handled by checking if current employee is empty, or if its not a trainer, or if members arent assigned to the trainer
     private void removeMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeMemberBtnActionPerformed
         if (currentEmployee == null) {
             javax.swing.JOptionPane.showMessageDialog(this, "Please search for a trainer first.");
@@ -309,7 +320,7 @@ public class Remove extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Members removed successfully!");
         }
     }//GEN-LAST:event_removeMemberBtnActionPerformed
-
+//Remove button ensures first a employee/member is selected, if it is the employee/member is removed after confirmation pop up
     private void RemovebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovebtnActionPerformed
         if (memberRadio.isSelected()) {
             if (currentMember == null) {
@@ -374,7 +385,7 @@ public class Remove extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this, "Please select a type first (Trainer or Member).");
         }
     }//GEN-LAST:event_RemovebtnActionPerformed
-
+//Depending on radio button choice, we search for the corresponding employee or member.
     private void IDinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDinputActionPerformed
         if (employeeRadio.isSelected()) {
             searchEmployee();
@@ -382,7 +393,7 @@ public class Remove extends javax.swing.JFrame {
             searchMember();
         }
     }//GEN-LAST:event_IDinputActionPerformed
-
+//Method for searching the employee entered and ensuring it is valid and not empty
     private void searchEmployee() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -432,7 +443,7 @@ public class Remove extends javax.swing.JFrame {
             ((DefaultTableModel) Memberslist.getModel()).setRowCount(0);
         }
     }
-
+//Searches for member method, and ensures its valid and not empty 
     private void searchMember() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -479,7 +490,7 @@ public class Remove extends javax.swing.JFrame {
             TrainerID.setText("Trainer ID : No ID found");
         }
     }
-
+//Controls what to display and what not to, depending on radio button choice.
     private void hideEmployeeSection() {
         SearchID.setVisible(false);
         IDinput.setVisible(false);
@@ -575,6 +586,12 @@ public class Remove extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_memberRadioActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -604,6 +621,7 @@ public class Remove extends javax.swing.JFrame {
     private javax.swing.JLabel Surname;
     private javax.swing.JLabel Trainer;
     private javax.swing.JLabel TrainerID;
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton employeeRadio;
     private javax.swing.JLabel firstNameLbl;

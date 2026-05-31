@@ -9,7 +9,8 @@ import java.text.SimpleDateFormat;
 
 /**
  *
- * @author Claire's pc
+ * @author Zaherah
+ * Purpose/description: allowing the user to add Employees/Members to the system
  */
 public class AddPage extends javax.swing.JFrame {
     
@@ -22,7 +23,7 @@ public class AddPage extends javax.swing.JFrame {
         initComponents();
         
    
-        
+        //Setting all components (execpt for the first radio buttons) to not appear when loading the page
         tblMembersList.setVisible(false);
         lblFirstname.setVisible(false);
         txtFirstname.setVisible(false);
@@ -62,7 +63,7 @@ public class AddPage extends javax.swing.JFrame {
         lblSalary.setVisible(false);
         txtSalary.setVisible(false);
         warningLabel.setVisible(false);
-       
+       //Setting all components (execpt for the first radio buttons) to not appear when loading the page
         
     }
 
@@ -306,93 +307,91 @@ public class AddPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMembersList)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCourse)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblPosition))
-                            .addComponent(lblType)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblGender)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTrainer)
-                                .addGap(18, 18, 18)
-                                .addComponent(radioFemale)
-                                .addGap(65, 65, 65)
-                                .addComponent(radioMale)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnYes)
-                                .addGap(88, 88, 88)
-                                .addComponent(btnNo))
+                        .addComponent(lblMemberID)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblEmployeeID))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblSalary)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lblDob)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblAddress)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblChooseType)
+                                .addComponent(lblPhone)
+                                .addComponent(lblFirstname)
+                                .addComponent(lblSurname))
+                            .addGap(0, 0, 0)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblMembersList)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblMemberID)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblEmployeeID))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(lblSalary)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(lblDob)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(txtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(lblAddress)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(lblChooseType)
-                                                .addComponent(lblPhone)
-                                                .addComponent(lblFirstname)
-                                                .addComponent(lblSurname))
-                                            .addGap(0, 0, 0)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(txtFirstname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(radioEmployee)
-                                                    .addGap(43, 43, 43)
-                                                    .addComponent(radioMember))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(txtMemberID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblTeam)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblDepartment)
-                                        .addGap(12, 12, 12)
-                                        .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtFirstname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSurname, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(radioEmployee)
+                                    .addGap(43, 43, 43)
+                                    .addComponent(radioMember))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txtMemberID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtEmployeeID, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblGender)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTrainer)
+                        .addGap(18, 18, 18)
+                        .addComponent(radioFemale)
+                        .addGap(65, 65, 65)
+                        .addComponent(radioMale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnYes)
+                        .addGap(88, 88, 88)
+                        .addComponent(btnNo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblTeam)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblDepartment)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblCourse)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(lblPosition))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblType)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(radioStudent)
                                             .addGap(80, 80, 80)
-                                            .addComponent(radioStaff))
-                                        .addComponent(txtPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(warningLabel)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSave)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCancel)))))
-                .addContainerGap(76, Short.MAX_VALUE))
+                                            .addComponent(radioStaff))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTeam, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCourse, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(warningLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSave)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancel))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,15 +461,21 @@ public class AddPage extends javax.swing.JFrame {
                     .addComponent(lblTeam)
                     .addComponent(txtDepartment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTeam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void radioMemberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioMemberActionPerformed
-        if(radioMember.isSelected()){
-            lblFirstname.setVisible(true);
+        
+        /*For the radio button "Member" if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Employees will remain hidden until the user chooses the Employee radio button.
+        */
+        
+        if(radioMember.isSelected()){ //if statment used to check the condition of if the Member radio is selected
+            lblFirstname.setVisible(true);       //then, the components of the Member will appear, while hiding the related components to Emplyees
             txtFirstname.setVisible(true);
             lblSurname.setVisible(true);
             txtSurname.setVisible(true);
@@ -507,7 +512,7 @@ public class AddPage extends javax.swing.JFrame {
             
             
             
-        }else{
+        }else{ //else to hide the Member's related components if the Member radio is not selected
             lblFirstname.setVisible(false);
             txtFirstname.setVisible(false);
             lblSurname.setVisible(false);
@@ -527,6 +532,11 @@ public class AddPage extends javax.swing.JFrame {
             radioStaff.setVisible(false);
             radioStudent.setVisible(false);
         }
+        
+        /*For the radio button "Member" if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Employees will remain hidden until the user chooses the Employee radio button.
+        */
     }//GEN-LAST:event_radioMemberActionPerformed
 
     private void txtFirstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstnameActionPerformed
@@ -538,8 +548,14 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAddressActionPerformed
 
     private void radioStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioStaffActionPerformed
-       if(radioStaff.isSelected()){
-           lblPosition.setVisible(true);
+       
+        /*For the radio button "Staff" within the Member, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Students will remain hidden until the user chooses the Students radio button.
+        */
+        
+        if(radioStaff.isSelected()){ //if statment for the condition of if the Staff radio button is selected
+           lblPosition.setVisible(true);          //then, the components of the Staff will appear, while hiding the related components to Students
            txtPosition.setVisible(true);
            lblDepartment.setVisible(true);
            txtDepartment.setVisible(true);
@@ -548,12 +564,17 @@ public class AddPage extends javax.swing.JFrame {
            lblTeam.setVisible(false);
            txtTeam.setVisible(false);
            
-       }else{
+       }else{ //else to hide the Staff's related components if the Staff radio is not selected
            lblPosition.setVisible(false);
            txtPosition.setVisible(false);
            lblDepartment.setVisible(false);
            txtDepartment.setVisible(false);
        }
+        
+        /*For the radio button "Staff" within the Member, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Students will remain hidden until the user chooses the Students radio button.
+        */
     }//GEN-LAST:event_radioStaffActionPerformed
 
     private void txtPositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPositionActionPerformed
@@ -561,8 +582,14 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPositionActionPerformed
 
     private void radioStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioStudentActionPerformed
-        if(radioStudent.isSelected()){
-           lblCourse.setVisible(true);
+        
+        /*For the radio button "Student" within the Member, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Staff will remain hidden until the user chooses the Staff radio button.
+        */
+        
+        if(radioStudent.isSelected()){ //if statment for the condition of if the Students radio button is selected
+           lblCourse.setVisible(true);            //then, the components of the Students will appear, while hiding the related components to Staff
            txtCourse.setVisible(true);
            lblTeam.setVisible(true);
            txtTeam.setVisible(true);
@@ -571,16 +598,23 @@ public class AddPage extends javax.swing.JFrame {
            lblDepartment.setVisible(false);
            txtDepartment.setVisible(false);
            
-        }else{
+        }else{ //else to hide the Student's related components if the Student radio is not selected
            lblCourse.setVisible(false);
            txtCourse.setVisible(false);
            lblTeam.setVisible(false);
            txtTeam.setVisible(false);
         }
+        
+        /*For the radio button "Student" within the Member, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Staff will remain hidden until the user chooses the Staff radio button.
+        */
     }//GEN-LAST:event_radioStudentActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
+        
+        //to close the page without exiting the whole program
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void txtDepartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDepartmentActionPerformed
@@ -588,8 +622,14 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDepartmentActionPerformed
 
     private void radioEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioEmployeeActionPerformed
-        if(radioEmployee.isSelected()){
-            lblEmployeeID.setVisible(true);
+        
+        /*For the radio button "Employee" if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Members will remain hidden until the user chooses the Memeber radio button.
+        */
+        
+        if(radioEmployee.isSelected()){ //if statment for the condition of if the Employee radio button is selected
+            lblEmployeeID.setVisible(true);        //then, the components of the Employee will appear, while hiding the related components to Members
             txtEmployeeID.setVisible(true);
             lblTrainer.setVisible(true);
             btnYes.setVisible(true);
@@ -627,7 +667,7 @@ public class AddPage extends javax.swing.JFrame {
            
            
             
-        }else{
+        }else{ //else to hide the Employee's related components if the Employee radio is not selected
             lblEmployeeID.setVisible(false);
             txtEmployeeID.setVisible(false);
             lblTrainer.setVisible(false);
@@ -636,6 +676,11 @@ public class AddPage extends javax.swing.JFrame {
             lblSalary.setVisible(false);
             txtSalary.setVisible(false);
         }
+        
+        /*For the radio button "Employee" if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Members will remain hidden until the user chooses the Memeber radio button.
+        */
     }//GEN-LAST:event_radioEmployeeActionPerformed
 
     private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
@@ -647,17 +692,27 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCourseActionPerformed
 
     private void btnYesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYesActionPerformed
-        if(btnYes.isSelected()){
-            lblMembersList.setVisible(true);
+        /*For the radio button "Yes" within the Employee, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to No will remain hidden until the user chooses the No radio button.
+        */
+        
+        if(btnYes.isSelected()){ //if statment for the condition of if the Yes radio button is selected
+            lblMembersList.setVisible(true);     //then, the components of the Yes will appear, while hiding the related components to the No
             tblMembersList.setVisible(true);
             jScrollPane1.setVisible(true);
             
-        }else{
+        }else{ //else to hide the Yes's related components if the Yes radio is not selected
             lblMembersList.setVisible(false);
             tblMembersList.setVisible(false);
             jScrollPane1.setVisible(false);
             
         }
+        
+        /*For the radio button "Yes" within the Employee, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to No will remain hidden until the user chooses the No radio button.
+        */
     }//GEN-LAST:event_btnYesActionPerformed
 
     private void txtSurnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSurnameActionPerformed
@@ -665,8 +720,14 @@ public class AddPage extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSurnameActionPerformed
 
     private void btnNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoActionPerformed
-        if(btnNo.isSelected()){
-            lblMembersList.setVisible(false);
+        
+        /*For the radio button "No" within the Employee, if it's selected then the corresponding components of it will appear,
+        otherwise, they will remain hidden.
+        While the ones related to Yes will remain hidden until the user chooses the Yes radio button.
+        */
+        
+       if(btnNo.isSelected()){ //if statment for the condition of if the No radio button is selected then,
+            lblMembersList.setVisible(false);           //the components appearing in the Yes will not appear
             tblMembersList.setVisible(false);
             jScrollPane1.setVisible(false);
             

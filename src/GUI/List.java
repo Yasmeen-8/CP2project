@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author marwa
+ * Purpose/Description: To display the list of member and trainer information 
  */
 public class List extends javax.swing.JFrame {
 
@@ -90,6 +91,7 @@ public class List extends javax.swing.JFrame {
         TrainerTable = new javax.swing.JTable();
         memberInput = new javax.swing.JLabel();
         memberComboBox = new javax.swing.JComboBox<>();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -200,6 +202,11 @@ public class List extends javax.swing.JFrame {
 
         memberComboBox.addActionListener(this::memberComboBoxActionPerformed);
 
+        btnBack.setBackground(new java.awt.Color(0, 0, 153));
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -227,9 +234,6 @@ public class List extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(TotalMembersAssigned))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
-                .addComponent(Printbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 512, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,6 +267,12 @@ public class List extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(NameAssigned, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Printbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(155, 155, 155))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -316,9 +326,11 @@ public class List extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(TotalMembersAssigned)
-                .addGap(40, 40, 40)
-                .addComponent(Printbtn)
-                .addGap(94, 94, 94)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Printbtn)
+                    .addComponent(btnBack))
+                .addGap(95, 95, 95)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -337,7 +349,7 @@ public class List extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//Handles event of print button clicked, print members if members are found, if not it displays error dialogues
     private void PrintbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintbtnActionPerformed
         String selected = (String) TrainerCombobox.getSelectedItem();
 
@@ -352,7 +364,7 @@ public class List extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Printing the list has failed: " + ex.getMessage());
         }
     }//GEN-LAST:event_PrintbtnActionPerformed
-
+//Combo box for trainer loads trainers and displays them
     private void TrainerComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerComboboxActionPerformed
         if (loading) {
             return;
@@ -388,7 +400,7 @@ public class List extends javax.swing.JFrame {
             showMembersSection();
         }
     }//GEN-LAST:event_memberRadioActionPerformed
-
+//Member combo box loads members, and assigned members assigned to trainers.
     private void memberComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberComboBoxActionPerformed
         String selected = (String) memberComboBox.getSelectedItem();
         if (selected == null || selected.equals("Select a Member")) {
@@ -421,6 +433,12 @@ public class List extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_memberComboBoxActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
+//Controls what to display depending on whether member or trainer is picked
     private void hideMembersSection() {
         memberInput.setVisible(false);
         memberComboBox.setVisible(false);
@@ -487,6 +505,7 @@ public class List extends javax.swing.JFrame {
         Printbtn.setVisible(true);
         loadAllTrainers();
     }
+    //Loads all the trainers
     private boolean loading = false;
     private void loadAllTrainers() {
         loading = true;
@@ -519,7 +538,7 @@ public class List extends javax.swing.JFrame {
         }
         loading = false;
     }
-
+//Loads all members
      private void loadMembers() {
         memberComboBox.removeAllItems();
         memberComboBox.addItem("Select a Member");
@@ -543,7 +562,7 @@ public class List extends javax.swing.JFrame {
         NameAssigned.setText("Name : " + trainer.getName());
         PhoneAssigned.setText("Phone : " + trainer.getPhoneNumber());
     }
-
+//Method to load members assigned to a trainer
     private void loadAssignedMembers(Trainer trainer) {
         DefaultTableModel model = (DefaultTableModel) MemberTable.getModel();
         model.setRowCount(0);
@@ -617,6 +636,7 @@ public class List extends javax.swing.JFrame {
     private javax.swing.JLabel TrainerInfo;
     private javax.swing.JTable TrainerTable;
     private javax.swing.JLabel Trainerselection;
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton empRadio;
     private javax.swing.JPanel jPanel1;

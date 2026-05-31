@@ -294,22 +294,27 @@ public class Main{ //START OF CLASS
         StoreUsers.users.remove(person);
     }
     
+// Generates a marketing report based on the selected type
 public static String generateMarketingReport(String type) {
 
+    // Stores the report text
     String text = "";
 
-    // ================= STAFF =================
-
+    // Generate staff section if "all" or "staff" is selected
     if(type.equals("all") || type.equals("staff")) {
 
         text += "===== POLYTECHNIC STAFF =====\n\n";
 
+        // Counts the number of staff members
         int count = 0;
 
+        // Loop through all users
         for(Users u : StoreUsers.users) {
 
+            // Check if the user is a Polytechnic Staff member
             if(u instanceof PolyStaff s) {
-                
+
+                // Add staff details to the report
                 text += "Name: " + s.getName() + "\n";
                 text += "Address: " + s.getAddress() + "\n";
                 text += "Phone: " + s.getPhoneNumber() + "\n";
@@ -322,21 +327,25 @@ public static String generateMarketingReport(String type) {
             }
         }
 
+        // Display total number of staff members
         text += "\nTotal Staff Members: " + count + "\n\n";
     }
 
-    // ================= STUDENTS =================
-
+    // Generate student section if "all" or "students" is selected
     if(type.equals("all") || type.equals("students")) {
 
         text += "===== POLYTECHNIC STUDENTS =====\n\n";
 
+        // Counts the number of student members
         int count = 0;
 
+        // Loop through all users
         for(Users u : StoreUsers.users) {
 
+            // Check if the user is a Polytechnic Student
             if(u instanceof PolyStudent s) {
 
+                // Add student details to the report
                 text += "Name: " + s.getName() + "\n";
                 text += "Address: " + s.getAddress() + "\n";
                 text += "Phone: " + s.getPhoneNumber() + "\n";
@@ -349,9 +358,11 @@ public static String generateMarketingReport(String type) {
             }
         }
 
+        // Display total number of student members
         text += "\nTotal Student Members: " + count + "\n";
     }
 
+    // Return the completed report
     return text;
 }
 }// END OF CLASS

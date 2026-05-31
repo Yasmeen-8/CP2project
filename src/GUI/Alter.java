@@ -10,7 +10,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
- * @author HP
+ * @author marwa
+ * Purpose/Description: To allow the user to alter personal information, for both employee and member.
  */
 public class Alter extends javax.swing.JFrame {
 
@@ -80,6 +81,7 @@ public class Alter extends javax.swing.JFrame {
         DOBDisplay = new javax.swing.JLabel();
         DOBAlter = new javax.swing.JLabel();
         DOBInput = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -209,6 +211,12 @@ public class Alter extends javax.swing.JFrame {
         jPanel2.add(DOBAlter, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 673, 62, -1));
         jPanel2.add(DOBInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 671, 247, 35));
 
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(0, 0, 153));
+        btnBack.setText("Back");
+        btnBack.addActionListener(this::btnBackActionPerformed);
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 367, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,7 +233,7 @@ public class Alter extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+//This part is responsible for handling the display, depending if employee or member is chosen
     private void empRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empRadioActionPerformed
         if (empRadio.isSelected()) {
             hideEditSection();
@@ -245,7 +253,7 @@ public class Alter extends javax.swing.JFrame {
             this.pack();
         }
     }//GEN-LAST:event_memberRadioActionPerformed
-
+    //Upon clicking edit button, it checks if the textbox for search ID is empty or invalid, and if not it displays info to alter.
     private void editbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editbtnActionPerformed
         String id = IDinput.getText().trim();
 
@@ -286,7 +294,7 @@ public class Alter extends javax.swing.JFrame {
             searchMember();
         }
     }
-
+//Controls what variables are displayed and what aren't
     private void hideAllDisplaySection() {
         role.setVisible(false);
         trainer.setVisible(false);
@@ -386,6 +394,8 @@ public class Alter extends javax.swing.JFrame {
         cancelbtn.setVisible(true);
     }
 
+    //Displays information for either employee or member when an ID is entered
+    
     private void searchEmployee() {
         String id = IDinput.getText().trim();
         if (id.isEmpty()) {
@@ -483,12 +493,12 @@ public class Alter extends javax.swing.JFrame {
         DOBDisplay.setText("DOB :  " + currentMember.getDOB());
         hideEditSection();
     }//GEN-LAST:event_IDinputActionPerformed
-
+//Hides the section shown for altering 
     private void cancelbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelbtnActionPerformed
         hideEditSection();
         this.pack();
     }//GEN-LAST:event_cancelbtnActionPerformed
-
+//Saves the altered information user entered
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
         if (empRadio.isSelected()) {
             if (fnInput.getText().trim().isEmpty()
@@ -536,6 +546,12 @@ public class Alter extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_savebtnActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        this.dispose();
+        
+        //to close the page without exiting the whole program
+    }//GEN-LAST:event_btnBackActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -566,6 +582,7 @@ public class Alter extends javax.swing.JFrame {
     private javax.swing.JLabel addressAlter;
     private javax.swing.JLabel addressDisplay;
     private javax.swing.JTextField addressInput;
+    private javax.swing.JButton btnBack;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
