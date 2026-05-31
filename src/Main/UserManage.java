@@ -3,25 +3,28 @@ import java.io.Serializable;
 import java.util.*;
 
 
+// UserManage: handles simple console-based user edits
 public class UserManage implements Serializable{
     public static int navigation = 0;
     static Scanner scan = new Scanner(System.in);
     private static Users person;
     
+    // Displays the alter menu and reads selection
     public static void alterMenu(){
-    do{
-    System.out.println(" --- Alter User Menu ---");
-    System.out.println("1: edit name");
-    System.out.println("2: edit phone");
-    System.out.println("3: edit email");
-    System.out.println("4: edit Activity");
-    System.out.println("5: <-- return");
-    
-    navigation = scan.nextInt();
-    }while(navigation <= 0 || navigation >= 6);
-    checknum();
+        do{
+            System.out.println(" --- Alter User Menu ---");
+            System.out.println("1: edit name");
+            System.out.println("2: edit phone");
+            System.out.println("3: edit email");
+            System.out.println("4: edit Activity");
+            System.out.println("5: <-- return");
+            
+            navigation = scan.nextInt();
+        }while(navigation <= 0 || navigation >= 6);
+        checknum();
     }
     
+    // Performs the chosen edit action
      public static  void checknum(){
         int id = 0;
         int phone = 0;
@@ -56,8 +59,9 @@ public class UserManage implements Serializable{
                 System.out.println("enter new Activity: ");
                 Activity = scan.nextBoolean();
                 if(Main.EditingMember){
-                Member personM = (Member) person;
-                personM.setActive(Activity);}
+                    Member personM = (Member) person;
+                    personM.setActive(Activity);
+                } 
                 else{
                     System.out.println(" This person is an employee ");
                     Main.menu();
@@ -73,6 +77,7 @@ public class UserManage implements Serializable{
         }
     }
 
+    // Placeholder: retrieve a user by ID (implemented elsewhere)
     static void getUser(int input) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

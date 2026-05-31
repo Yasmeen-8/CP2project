@@ -2,16 +2,20 @@ package Main;
 
 import java.io.Serializable;
 
+// Users: base class containing common user fields
 public class Users implements Serializable{
+    // Basic personal information
     private String name;
     private String email;
     private String address;
     private int phoneNumber;
     private String age;
+    // public id used across system
     public int userID;
     private String DOB;
     private double salary; 
 
+    // Name accessors
     public String getName() {
         return name;
     }
@@ -20,6 +24,7 @@ public class Users implements Serializable{
         this.name = name;
     }
 
+    // Email accessors
     public String getEmail() {
         return email;
     }
@@ -28,6 +33,7 @@ public class Users implements Serializable{
         this.email = email;
     }
 
+    // Phone accessors
     public int getPhoneNumber() {
         return phoneNumber;
     }
@@ -36,14 +42,16 @@ public class Users implements Serializable{
         this.phoneNumber = phoneNumber;
     }
     
+    // Address accessors
     public String getAddress() {
-    return address;
-}
+        return address;
+    }
 
     public void setAddress(String address) {
-    this.address = address;
-}
+        this.address = address;
+    }
 
+    // Age accessors
     public String getAge() {
         return age;
     }
@@ -52,6 +60,7 @@ public class Users implements Serializable{
         this.age = age;
     }
 
+    // DOB accessors
     public String getDOB() {
         return DOB;
     }
@@ -60,6 +69,7 @@ public class Users implements Serializable{
         this.DOB = DOB;
     }
 
+    // Salary accessors
     public double getSalary() {
         return salary;
     }

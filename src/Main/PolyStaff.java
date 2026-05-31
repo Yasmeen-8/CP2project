@@ -2,8 +2,11 @@ package Main;
 
 import java.io.Serializable;
 
+// PolyStaff: member type for polytechnic staff
 public class PolyStaff extends Member implements Serializable{
+    // staff discount rate
     double staffDiscount;
+    // staff position title
     public String position;
 
     public double getStaffDiscount() {
@@ -31,6 +34,7 @@ public class PolyStaff extends Member implements Serializable{
     }
     public String department;
     
+    // Constructor initializes defaults
     PolyStaff(){
         this.userID++;
         staffDiscount = 0.0;

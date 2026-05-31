@@ -23,7 +23,7 @@ public class Main{ //START OF CLASS
         menu();
     }
     
-    public static void menu(){ //FIX NUMBERS
+    public static void menu(){ //FIX NUMBERS // this is to test the System before the ui was made
     do{
     System.out.println("Please choose an option from the following menu");
     System.out.println("--- add user ---");
@@ -49,7 +49,7 @@ public class Main{ //START OF CLASS
 
     }
  
-    public static void checknum(){
+    public static void checknum(){ // this is extra to test the system before the UI was made
         switch(navigation){
             case 1 -> {
                 System.out.println("--- Adding new User ---");

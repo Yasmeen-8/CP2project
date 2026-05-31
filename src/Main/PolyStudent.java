@@ -40,6 +40,7 @@ public class PolyStudent extends Member implements Serializable{ //polystudent c
     }
    
     
+    // Constructor sets defaults for a polytechnic student
     PolyStudent(){
         studentDiscount = 0.0;
         this.userID++;
