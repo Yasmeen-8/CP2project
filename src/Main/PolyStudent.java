@@ -2,7 +2,7 @@ package Main;
 
 import java.io.Serializable;
 
-public class PolyStudent extends Member implements Serializable{
+public class PolyStudent extends Member implements Serializable{ //polystudent class where it extends the member and impliments the seiralizable
     private double studentDiscount;
     public String course;
     private boolean Inteam;
@@ -19,7 +19,7 @@ public class PolyStudent extends Member implements Serializable{
         return course;
     }
 
-    public void setCourse(String course) {
+    public void setCourse(String course) { 
         this.course = course;
     }
 
